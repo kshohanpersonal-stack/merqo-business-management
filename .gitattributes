@@ -1,0 +1,17 @@
+# Keep LF line endings in every checkout so SQL snapshots, generated TypeScript
+# and the embedded migration string are byte-identical on Windows and Linux.
+* text=auto eol=lf
+
+# Binary assets must never be normalised.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
+*.gif  binary
+*.woff2 binary
+*.woff binary
+*.ttf  binary
+*.pdf  binary
+*.exe  binary
+*.msi  binary
+*.node binary

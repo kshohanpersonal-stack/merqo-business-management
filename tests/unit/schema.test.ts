@@ -1,13 +1,15 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, rmSync } from 'node:fs';
+
+const lf = (text: string): string => text.replace(/\r\n/g, '\n');
 import { MIGRATION_SQL, LATEST_SCHEMA_VERSION } from '../../src/core/schema.generated';
 import { openDatabase } from '../../src/core/db';
 import { makeHarness } from '../helpers';
 
 describe('database schema and migrations', () => {
   it('embedded migration SQL matches the canonical SQL file exactly', () => {
-    expect(MIGRATION_SQL[1]).toBe(readFileSync('database/migrations/001_initial.sql', 'utf8'));
-    expect(readFileSync('database/schema/schema.sql', 'utf8')).toBe(MIGRATION_SQL[1]);
+    expect(lf(MIGRATION_SQL[1] ?? '')).toBe(lf(readFileSync('database/migrations/001_initial.sql', 'utf8')));
+    expect(lf(readFileSync('database/schema/schema.sql', 'utf8'))).toBe(lf(MIGRATION_SQL[1] ?? ''));
     expect(LATEST_SCHEMA_VERSION).toBe(1);
   });
   it('creates all documented tables, WAL mode, foreign keys and integrity', () => {

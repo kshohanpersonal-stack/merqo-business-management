@@ -4,8 +4,9 @@ import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
-const migration = readFileSync('database/migrations/001_initial.sql', 'utf8');
-const snapshot = readFileSync('database/schema/schema.sql', 'utf8');
+const lf = (text) => text.replace(/\r\n/g, '\n');
+const migration = lf(readFileSync('database/migrations/001_initial.sql', 'utf8'));
+const snapshot = lf(readFileSync('database/schema/schema.sql', 'utf8'));
 const tmp = mkdtempSync(join(tmpdir(), 'merqo-schema-'));
 const dbPath = join(tmp, 'verify.sqlite');
 const checks = [];

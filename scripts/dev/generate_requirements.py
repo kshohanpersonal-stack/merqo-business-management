@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -49,7 +48,6 @@ def main() -> None:
     payload = {
         "product": "MERQO Business Management & POS",
         "version": (ROOT / "VERSION").read_text(encoding="utf-8").strip() if (ROOT / "VERSION").exists() else "0.0.0",
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
         "statuses": STATUS_ORDER,
         "verificationSteps": VERIFICATION_STEPS,
         "requirements": requirements,
@@ -62,7 +60,7 @@ def main() -> None:
     lines = [
         "# MERQO — Master Requirement Checklist",
         "",
-        f"Generated: {payload['generatedAt']} · Version: {payload['version']} · Source: `docs/requirements.json`",
+        f"Generated deterministically from `docs/requirement-overrides.json` · Version: {payload['version']} · Source: `docs/requirements.json`",
         "",
         "Statuses: " + ", ".join(f"`{s}`" for s in STATUS_ORDER) + ".",
         "",

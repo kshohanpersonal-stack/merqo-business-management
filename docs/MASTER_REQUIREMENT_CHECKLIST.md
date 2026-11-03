@@ -1,6 +1,6 @@
 # MERQO — Master Requirement Checklist
 
-Generated: 2026-11-03T12:39:35.054321+00:00 · Version: 0.1.0 · Source: `docs/requirements.json`
+Generated deterministically from `docs/requirement-overrides.json` · Version: 0.1.0 · Source: `docs/requirements.json`
 
 Statuses: `NOT STARTED`, `PLANNED`, `IN PROGRESS`, `IMPLEMENTED`, `TESTING`, `PASSED`, `FAILED`, `BLOCKED`.
 
