@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-03T15:04:09.098Z",
-  "base": "http://127.0.0.1:45895",
-  "dataDir": "/tmp/merqo-e2e-1793718245994",
+  "generatedAt": "2026-11-03T15:21:21.344Z",
+  "base": "http://127.0.0.1:38281",
+  "dataDir": "/tmp/merqo-e2e-1793719277901",
   "total": 18,
   "passed": 18,
   "failed": 0,
@@ -14,7 +14,7 @@
     {
       "name": "02 Ed25519 offline activation",
       "ok": true,
-      "detail": "MQ-844E06F57E40D819967F080E"
+      "detail": "MQ-0B6DBFA8085513A1EB1A7D5D"
     },
     {
       "name": "03 setup creates owner session and permissions",
@@ -29,17 +29,17 @@
     {
       "name": "05 product created with SKU/barcode",
       "ok": true,
-      "detail": "251724a1-7d1c-4784-a733-c7a70717d469"
+      "detail": "840048ec-b031-4abb-bd8d-c0fdc7ba7377"
     },
     {
       "name": "06 customer created",
       "ok": true,
-      "detail": "c50de235-ad73-4ef8-a421-99d269a9354d"
+      "detail": "74ce8226-473d-4528-966d-c65b4097016f"
     },
     {
       "name": "07 supplier created",
       "ok": true,
-      "detail": "5531cc10-e908-4fea-95a4-19e0ae032071"
+      "detail": "4ef391a6-7e85-418b-bb1e-8f4b29e76071"
     },
     {
       "name": "08 purchase increases stock and supplier payable",
@@ -54,7 +54,7 @@
     {
       "name": "10 POS checkout persists sale, due and rejects duplicate checkout",
       "ok": true,
-      "detail": "invoice=INV-20261103-247396 total=20000 due=15000 duplicateRejected=true"
+      "detail": "invoice=INV-20261103-279539 total=20000 due=15000 duplicateRejected=true"
     },
     {
       "name": "11 receipt HTML, 58mm ESC/POS and reprint generated",
@@ -74,7 +74,7 @@
     {
       "name": "14 expense created",
       "ok": true,
-      "detail": "{\"id\":\"4158672f-edb4-411a-9993-e346a8c1f90b\"}"
+      "detail": "{\"id\":\"1de62545-c1cc-4d7f-a1c7-11242e7391f1\"}"
     },
     {
       "name": "15 28 reports, daily-sales rows, P&L and CSV export",
@@ -84,7 +84,7 @@
     {
       "name": "16 backup verified, restore recovers pre-mutation data",
       "ok": true,
-      "detail": "backup=MERQO-Backup-2026-11-03T15-04-07-440Z-5cb02b.merqobak products=1"
+      "detail": "backup=MERQO-Backup-2026-11-03T15-21-19-588Z-b5083e.merqobak products=1"
     },
     {
       "name": "17 restart preserves activation, session, products, sales and dashboard",

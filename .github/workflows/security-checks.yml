@@ -17,9 +17,8 @@ jobs:
       - run: npm ci
       - name: No secrets or customer data tracked
         run: python3 scripts/dev/secret_scan.py
-      - name: Dependency vulnerability audit
+      - name: Dependency vulnerability audit (fails on high/critical)
         run: npm audit --audit-level=high
-        continue-on-error: true
       - name: Dependency licence allow-list
         run: npm run licenses
       - name: Owner-only artifacts must not be in the repository

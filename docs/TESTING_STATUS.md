@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-03. Every number below comes from an executed command; compilation
 is never counted as an application test. Machine-readable Vitest output:
-`docs/test-results.json` (latest local full run: 11 files / 41 tests, 24.10 s).
+`docs/test-results.json` (latest local full run: 11 files / 41 tests, 26.45 s).
 
 ## Executed suites (local Linux sandbox, current worktree)
 
@@ -16,12 +16,13 @@ is never counted as an application test. Machine-readable Vitest output:
 | Backup / tamper / encryption / safe restore | `npm test` | **2/2 PASSED** | `tests/integration/backup.test.ts` |
 | Security / auth / RBAC / injection / paths / logs | `npm test` | **5/5 PASSED** | `tests/security/auth.test.ts` |
 | Performance (10,000 products) | `npm test` | **1/1 PASSED** — search p95 **8.0 ms**, dashboard **5.6 ms** | `tests/performance/large-dataset.test.ts` |
-| **Full Vitest suite** | `npm test` | **11 files / 41 tests PASSED, 0 failed** (24.10 s) | `docs/test-results.json` |
+| **Full Vitest suite** | `npm test` | **11 files / 41 tests PASSED, 0 failed** (26.45 s) | `docs/test-results.json` |
 | Database verification | `npm run db:verify` | **30/30 checks PASSED** | `scripts/database/verify.mjs` |
 | TypeScript | `npm run typecheck` | **PASSED** (0 errors) | — |
 | ESLint | `npm run lint` | **PASSED** (0 errors, 0 warnings) | — |
 | Prettier | `npm run format:check` | **PASSED** | — |
-| Third-party licences | `npm run licenses` | **PASSED** — 723 installed packages allow-listed | `docs/architecture/THIRD_PARTY_LICENSES.md` |
+| Third-party licences | `npm run licenses` | **PASSED** — 682 installed packages allow-listed | `docs/architecture/THIRD_PARTY_LICENSES.md` |
+| Dependency audit | `npm audit --audit-level=high` | **PASSED** — 0 high/critical, 28 moderate advisories disclosed | local command; `docs/KNOWN_ISSUES.md` KI-018 |
 | Secret scan (tracked files) | `npm run secrets` | **PASSED** — 173 tracked files after staging all delivery files | `scripts/dev/secret_scan.py` |
 | Renderer + Electron bundles | `npm run build` | **PASSED** | `dist/`, `dist-electron/` |
 | Owner-only generator | `npm run build:generator` | **PASSED** — SEA blob 17,756 bytes; CLI `help` smoke test | `dist-electron/license-generator.blob` |
@@ -45,13 +46,19 @@ is never counted as an application test. Machine-readable Vitest output:
 | `41646629269` | CI — quality, tests and Linux build | **SUCCESS** (46 s) | `f7d78d5` re-verification |
 | `41646629348` | Security checks | **SUCCESS** (27 s) | `f7d78d5`; `npm audit` produced a non-blocking annotation, all job steps succeeded |
 | `41646629301` | Windows build | **SUCCESS** (3 m 34 s) | `f7d78d5`: 41/41 tests, unsigned NSIS installer, owner-only generator, checksums, protected artifacts |
+| `41660526854` | CI — quality, tests and Linux build | **SUCCESS** | `8201bc7`: 41/41 tests, 30/30 DB checks, 18/18 E2E, visual QA, build, 723 licences, secret scan, QA evidence artifact `13242311120` |
+| `41660526869` | Security checks | **SUCCESS** | `8201bc7`: secret scan, `npm audit` non-blocking annotation at that commit, licence allow-list, owner-only-artifact policy |
+| `41660526709` | Windows build | **SUCCESS** (5 m 10 s) | `8201bc7`: 41/41 tests, SQLite 3.53.4, unsigned NSIS installer (131,630,712 bytes), owner-only generator, checksums, protected artifacts |
 
 Earlier Windows/CI failures were fixed: `41637701817`, `41637702024`, `41638809098`,
 `41638808942`, `41639542221`, `41640347730`, `41641120508`. See
-`docs/BUILD_HISTORY.md`. Final CI/Security/Windows runs are executed on the exact delivery commit; their
-conclusions and run IDs are verified in `gh run list` and recorded in the final delivery
-answer. Workflows were extended with `format:check`, `db:verify`, `qa:e2e` and
-`qa:visual`.
+`docs/BUILD_HISTORY.md`. The `8201bc7` Security run still had a non-blocking `npm audit`
+annotation; security-driven dependency upgrades after that commit reduce high/critical
+findings to zero and the workflow now fails on high/critical advisories rather than
+suppressing them. Final CI/Security/Windows runs are executed on the exact
+security-upgrade delivery commit; their conclusions and run IDs are verified in
+`gh run list` and recorded in the final delivery answer. Workflows were extended with `format:check`, `db:verify`,
+`qa:e2e` and `qa:visual`.
 
 ## NOT TESTED / BLOCKED
 

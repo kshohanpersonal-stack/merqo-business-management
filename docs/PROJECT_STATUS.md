@@ -10,7 +10,7 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
 | Remote branch at checkpoint | same commit; subsequent delivery work is committed in this series |
 | Tags / GitHub Releases | none; no production release has been published |
 | Repository visibility | public; default branch `main` |
-| Latest historical green CI on `f7d78d5` | CI `41646629269`, Security `41646629348`, Windows `41646629301` |
+| Latest green CI before security upgrades on `8201bc7` | CI `41660526854`, Security `41660526869`, Windows `41660526709` |
 | Final HEAD CI | re-run after the final push; conclusions and run IDs are verified in `gh run list` and recorded in the final delivery answer |
 
 ## Completed since the Phase A checkpoint
@@ -39,6 +39,10 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
 - Corrected stale certificate/SmartScreen wording across the delivery docs to the
   owner's explicit decision: unsigned distribution is accepted; no OV/EV purchase, no
   Defender/SmartScreen bypass, no trusted-publisher claim.
+- Applied security-driven dependency upgrades: Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7,
+  electron-builder 26.18.0 and explicit `react-is@19.2.0`. `npm audit --audit-level=high`
+  now passes with 0 high/critical and 28 moderate advisories; all 41 tests, build,
+  smoke, E2E and visual QA were re-run after the upgrades.
 
 ## Reproducible verification executed on the current worktree
 
@@ -47,9 +51,10 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
 | `npm run format:check` | PASS |
 | `npm run typecheck` | PASS |
 | `npm run lint` | PASS (0 errors / 0 warnings) |
-| `npm test` | 11 files / 41 tests PASS, 24.10 s (fresh `docs/test-results.json`) |
+| `npm test` | 11 files / 41 tests PASS, 26.45 s (fresh `docs/test-results.json`) |
 | `npm run db:verify` | 30/30 PASS |
-| `npm run licenses` | 723 installed packages allow-listed, PASS |
+| `npm run licenses` | 682 installed packages allow-listed, PASS |
+| `npm audit --audit-level=high` | PASS: 0 high/critical, 28 moderate advisories disclosed |
 | `npm run secrets` | 173 tracked files after staging all delivery files, PASS |
 | `npm run build` | renderer + Electron main/preload PASS |
 | `npm run build:generator` | PASS (SEA blob 17,756 bytes; CLI smoke test) |
@@ -69,9 +74,9 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
 - No version tag, public GitHub Release or release notes. A successful build is not a
   production release. The owner accepts an unsigned installer; this is not a blocker,
   but unverified-publisher and variable SmartScreen behaviour must be disclosed.
-- Final CI/Security/Windows runs are executed on the exact delivery commit; their
-  conclusions and run IDs are verified in `gh run list` and recorded in the final
-  delivery answer.
+- Final CI/Security/Windows runs are executed on the exact security-upgrade delivery
+  commit; their conclusions and run IDs are verified in `gh run list` and recorded in the
+  final delivery answer.
 
 ## Exact next action
 

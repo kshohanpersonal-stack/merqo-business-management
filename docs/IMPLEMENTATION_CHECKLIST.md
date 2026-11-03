@@ -14,14 +14,15 @@ This is the session-level execution checklist; the 247-item requirement register
 | EX-05 | Full 18-step end-to-end workflow evidence | `scripts/dev/e2e-workflow.mjs`, `docs/e2e-workflow.json` | **PASSED** | 18/18 checks against real SQLite and `/api` |
 | EX-06 | Functional Bangla/English UI language layer | `src/renderer/i18n.ts`, `App.tsx`, `Auth.tsx`, `System.tsx`, visual QA | **TESTING** | dictionary coverage is partial; 18/18 nav labels verified, all app strings not translated |
 | EX-07 | Missing delivery/progress guides | `docs/PROJECT_STATUS.md`, `IMPLEMENTATION_CHECKLIST.md`, `KNOWN_LIMITATIONS.md`, `INSTALLATION_GUIDE.md`, `BUILD_RELEASE_GUIDE.md`, `BACKUP_RESTORE_GUIDE.md`, `DEVELOPMENT_GUIDE.md` | **PASSED** | final run IDs recorded in the delivery answer |
-| EX-08 | Windows installer/generator artifacts on final commit | `.github/workflows/build-windows.yml` | **TESTING** | re-run on final commit; conclusions recorded in delivery answer |
-| EX-09 | Final CI/Security/Windows green on final HEAD | `gh run list` | **TESTING** | re-run on final commit; conclusions recorded in delivery answer |
+| EX-08 | Windows installer/generator artifacts on final commit | `.github/workflows/build-windows.yml` | **TESTING** | green on `8201bc7` (artifacts `13242046945` / `13241417765`); re-run on final security-upgrade commit; conclusions recorded in delivery answer |
+| EX-09 | Final CI/Security/Windows green on final HEAD | `gh run list` | **TESTING** | green on `8201bc7` (`41660526854` / `41660526869` / `41660526709`); re-run on final security-upgrade commit; conclusions recorded in delivery answer |
 | EX-10 | Production Ed25519 public key | `src/core/public-key.ts` | **BLOCKED** | owner has not supplied production key |
 | EX-11 | Real Windows install/activation/uninstall QA | Windows hardware | **BLOCKED** | no Windows host in sandbox |
 | EX-12 | Thermal printer / barcode scanner QA | physical devices | **BLOCKED** | no hardware attached |
 | EX-13 | Version tag / public GitHub Release | tag-triggered `release.yml` | **BLOCKED** | owner authorisation and readiness gates not met; no release published |
 | EX-14 | Trusted Authenticode signature / SmartScreen clearance | owner certificate | **NOT APPLICABLE** | owner explicitly declined purchase; unsigned build accepted |
-| EX-15 | Final unsigned production build report | `docs/FINAL_BUILD_REPORT.md` | **TESTING** | cannot be a released-product report until EX-10..EX-13 are resolved or explicitly disclosed |
+| EX-15 | Final unsigned production build report | `docs/FINAL_BUILD_REPORT.md` | **TESTING** | evidence report present; cannot be a released-product report until EX-10..EX-13 are resolved or explicitly disclosed |
+| EX-16 | Remove high/critical dependency advisories | `package.json`, `package-lock.json`, `docs/KNOWN_ISSUES.md` | **PASSED** | Vite 7.3.7 / Vitest 4.1.12 / Zod 4.6.7 / electron-builder 26.18.0 / react-is 19.2.0; `npm audit --audit-level=high` PASS with 28 moderate advisories disclosed |
 
 Every status change requires executed evidence. `NOT APPLICABLE` is used only for the
 owner's explicit decision to distribute unsigned builds, not to hide a defect.

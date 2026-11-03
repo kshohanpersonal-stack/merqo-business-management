@@ -70,3 +70,7 @@ records, private keys, or raw SQL parameters. Logs stay local and are rotated (m
 * Local encryption at rest for the main database is not implemented (SQLite is
   protected by Windows account ACLs); encrypted **backups** are supported. Full DB
   encryption requires SQLCipher with a key-management design and is a roadmap item.
+* `npm audit --audit-level=high` passes after security-driven dependency upgrades, the
+  Security workflow fails on high/critical advisories, and 28 moderate transitive
+  build/test-tool advisories remain disclosed in `docs/KNOWN_ISSUES.md` KI-018; no audit
+  warning was suppressed for a green status.

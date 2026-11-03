@@ -12,10 +12,12 @@ Founder: Shohan Khan · merqoonline@gmail.com.
 > [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md) for the exact, evidence-based state.
 > Phase A checkpoint: `7cd19bb`; delivery work since then adds a bilingual renderer,
 > headless-Chromium visual QA and an 18-step E2E workflow. Historical CI, Security and
-> Windows workflows are green on `f7d78d5`, but the final delivery commit must be
-> re-verified. The unsigned installer and owner-only generator exist as protected CI
-> artifacts with development-key activation. No version tag or GitHub Release exists.
-> Nothing in this README claims production readiness.
+> CI, Security and Windows workflows are green on `8201bc7`; the final security-upgrade
+> delivery commit is re-verified and its run IDs recorded in the delivery answer. The
+> unsigned installer and owner-only generator exist as protected CI artifacts with
+> development-key activation. Security-driven dependency upgrades removed all high/critical
+> `npm audit` findings; 28 moderate build/test-tool advisories remain disclosed. No version
+> tag or GitHub Release exists. Nothing in this README claims production readiness.
 
 ## What is implemented
 
@@ -79,7 +81,7 @@ Additional verified commands:
 npm run db:verify       # 30/30 schema, FK, ACID and index checks
 npm run lint            # 0 errors / 0 warnings
 npm run format:check    # Prettier clean
-npm run licenses        # 723 packages allow-listed for commercial redistribution
+npm run licenses        # 682 packages allow-listed for commercial redistribution
 npm run build:generator # owner-only generator SEA blob + CLI smoke test
 npm run smoke           # 12/12 live activation → sale → backup checks (needs npm run dev)
 npm run qa:visual       # 18 pages / 4 viewports / 6 screenshots in headless Chromium
@@ -87,30 +89,34 @@ npm run qa:e2e          # 18/18 real-dispatcher owner workflow checks
 npm run checklist       # regenerate the 247-requirement master checklist
 ```
 
-## CI status (historical green runs; final commit re-verification in delivery answer)
+## CI status (green runs; final delivery commit verification in delivery answer)
 
-| Workflow | `3b11e3a` | `efacbaf` | `f7d78d5` |
-| --- | --- | --- | --- |
-| CI — quality, tests and Linux build | `41642232635` SUCCESS | `41645278808` SUCCESS | `41646629269` SUCCESS |
-| Security checks | `41642232646` SUCCESS | `41645278586` SUCCESS | `41646629348` SUCCESS |
-| Windows build | `41642232644` SUCCESS | `41645278572` SUCCESS | `41646629301` SUCCESS |
+| Workflow | `3b11e3a` | `efacbaf` | `f7d78d5` | `8201bc7` |
+| --- | --- | --- | --- | --- |
+| CI — quality, tests and Linux build | `41642232635` SUCCESS | `41645278808` SUCCESS | `41646629269` SUCCESS | `41660526854` SUCCESS |
+| Security checks | `41642232646` SUCCESS | `41645278586` SUCCESS | `41646629348` SUCCESS | `41660526869` SUCCESS |
+| Windows build | `41642232644` SUCCESS | `41645278572` SUCCESS | `41646629301` SUCCESS | `41660526709` SUCCESS |
 
-The `f7d78d5` Windows run produced an unsigned NSIS installer (artifact `13235581789`,
-ZIP SHA-256 `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413`) and the
-owner-only generator (protected artifact `13235615213`, ZIP SHA-256
-`b65f2bcfcf7bfb611bcaa25c927164bd61c497801ab2ccfd4bfe5869d8b37130`, 7-day retention).
-Earlier `3b11e3a` / `efacbaf` artifacts are recorded in `docs/BUILD_HISTORY.md`. All are
-technical build outputs: **unsigned**, embedding the development public key, and
-**not released**. The owner explicitly declined an OV/EV certificate; no Defender or
-SmartScreen bypass is included and no trusted-publisher claim is made.
+The `8201bc7` Windows run produced an unsigned NSIS installer (artifact `13242046945`,
+ZIP SHA-256 `5f953eceb37e8743e29c0f2084e98bf603deab0a2e29ed43ab507ab340206e8b`,
+ZIP 131,641,727 bytes) and the owner-only generator (protected artifact `13241417765`,
+ZIP SHA-256 `3d4943c09c333df9fb87c567263a94b4a48fed01763419ecf1c48141347d18b5`,
+ZIP 34,334,219 bytes, 7-day retention). Earlier `f7d78d5`, `efacbaf` and `3b11e3a`
+artifacts are recorded in `docs/BUILD_HISTORY.md`. All are technical build outputs:
+**unsigned**, embedding the development public key, and **not released**. The owner
+explicitly declined an OV/EV certificate; no Defender or SmartScreen bypass is included
+and no trusted-publisher claim is made.
 
-Actual executed local results on the current worktree: `npm test` 41/41 (24.10 s),
+Actual executed local results on the current worktree: `npm test` 41/41 (26.45 s),
 typecheck/lint/format/licences clean, renderer + Electron bundles built, 30/30 database
 checks, 12/12 preview API smoke checks, 18/18 E2E workflow checks and headless-Chromium
-visual QA at four viewports. Final CI/Security/Windows runs are re-run on the exact delivery commit and their
-conclusions verified before the delivery answer. Windows installation/activation testing, hardware QA, production key,
-version tag and GitHub Release remain **BLOCKED** — see `docs/TESTING_STATUS.md`,
-`docs/BUILD_HISTORY.md` and `docs/FINAL_BUILD_REPORT.md`.
+visual QA at four viewports. Security-driven upgrades moved Vite to 7.3.7, Vitest to
+4.1.12, Zod to 4.6.7, electron-builder to 26.18.0 and added `react-is@19.2.0`;
+`npm audit --audit-level=high` passes with 0 high/critical and 28 moderate advisories.
+Final CI/Security/Windows runs are re-run on the exact delivery commit and their
+conclusions verified before the delivery answer. Windows installation/activation testing,
+hardware QA, production key, version tag and GitHub Release remain **BLOCKED** — see
+`docs/TESTING_STATUS.md`, `docs/BUILD_HISTORY.md` and `docs/FINAL_BUILD_REPORT.md`.
 
 ## Licensing and distribution
 

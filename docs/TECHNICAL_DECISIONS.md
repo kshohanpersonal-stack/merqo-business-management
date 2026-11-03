@@ -184,6 +184,14 @@ All decisions above are now reflected in source, not just planned:
   "equivalent component" decision.
 * Light theme only, thermal receipt printing only, no cloud/telemetry, no artificial record
   limits, and no expiry/online-renewal fields in the lifetime licence payload.
+* Security-driven dependency upgrades (2026-11-03): Vite `7.2.2` → `7.3.7`, Vitest
+  `3.2.4` → `4.1.12`, Zod `4.1.11` → `4.6.7`, electron-builder `26.0.12` → `26.18.0`,
+  plus explicit `react-is@19.2.0` for Recharts. These were made because `npm audit`
+  reported high/critical advisories in the pinned build/test toolchain; after the upgrades
+  `npm audit --audit-level=high` passes with 0 high/critical and 28 moderate advisories.
+  No audit warning was suppressed; the Security workflow now fails on high/critical
+  advisories and the moderate findings are disclosed in `KNOWN_ISSUES.md` /
+  `RISK_REGISTER.md`.
 * SQLite driver: `better-sqlite3@13.0.3` (N-API) replaced 12.4.1. The 12.x V8 binding did
   not compile against Electron 43's V8 headers (`v8::External::Value`, `PropertyCallbackInfo::This`
   and `Context::GetIsolate` were removed/changed). Version 13 ships one N-API prebuild per
@@ -191,8 +199,9 @@ All decisions above are now reflected in source, not just planned:
   `npmRebuild: false` and the Windows workflow no longer performs an ABI rebuild.
 
 * Historical CI evidence: `3b11e3a` (`41642232635` / `41642232646` / `41642232644`),
-  `efacbaf` (`41645278808` / `41645278586` / `41645278572`) and `f7d78d5`
-  (`41646629269` / `41646629348` / `41646629301`) are green. The Windows jobs produced
+  `efacbaf` (`41645278808` / `41645278586` / `41645278572`), `f7d78d5`
+  (`41646629269` / `41646629348` / `41646629301`) and `8201bc7` (`41660526854` /
+  `41660526869` / `41660526709`) are green. The Windows jobs produced
   unsigned NSIS installers and protected owner-only generator artifacts. Final delivery
   commit workflows are re-run and their run IDs recorded in the delivery answer.
   `npm ci --ignore-scripts` plus an explicit Electron

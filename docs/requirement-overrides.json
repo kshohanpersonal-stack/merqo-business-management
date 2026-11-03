@@ -345,7 +345,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -387,7 +387,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -429,7 +429,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "npm run licenses verified 723 installed packages against the commercial allow-list, including the two QA dev dependencies.",
+    "notes": "npm run licenses verified 682 installed packages against the commercial allow-list; npm audit --audit-level=high passes with 28 moderate advisories and no high/critical findings after security upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -471,7 +471,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -513,7 +513,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -555,7 +555,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -597,7 +597,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -639,7 +639,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Twelve logical layers separated; offline-first; dependency licences verified by npm run licenses.",
+    "notes": "Twelve logical layers separated; offline-first; 682 dependency licences verified and npm audit --audit-level=high passes with no high/critical findings after security-driven upgrades.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -738,7 +738,7 @@
       "docs/e2e-workflow.json",
       "docs/TEST_CASES.md"
     ],
-    "notes": "Installer/desktop/Start Menu icon usage is configured and the installer was built in CI 41646629301; installation testing is BLOCKED.",
+    "notes": "Installer/desktop/Start Menu icon usage is configured and the installer was built in CI 41660526709 on 8201bc7; installation testing is BLOCKED.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5308,7 +5308,7 @@
       "tests/security/auth.test.ts",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "Owner-only generator EXE built and uploaded as protected CI artifact 13235615213; real owner-PC execution NOT TESTED.",
+    "notes": "Owner-only generator EXE built and uploaded as protected CI artifacts 13235615213 (f7d78d5) and 13241417765 (8201bc7); real owner-PC execution NOT TESTED.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5411,7 +5411,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Windows CI packaged a standalone Electron app as MERQO-Setup-0.1.0-x64.exe (131,626,408 bytes); customer installation not yet executed.",
+    "notes": "Windows CI 41660526709 on 8201bc7 packaged a standalone Electron app as MERQO-Setup-0.1.0-x64.exe (131,630,712 bytes); customer installation not yet executed.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5493,7 +5493,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Installer built in CI 41646629301, but first-launch installation/activation flow is not executable here; BLOCKED.",
+    "notes": "Installer built in CI 41660526709 on 8201bc7, but first-launch installation/activation flow is not executable here; BLOCKED.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5576,7 +5576,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "CI, security and Windows-build workflows executed green on f7d78d5 (41646629269 / 41646629348 / 41646629301); final delivery commit runs are re-run and recorded in the final delivery answer.",
+    "notes": "CI, security and Windows-build workflows executed green on f7d78d5 (41646629269 / 41646629348 / 41646629301) and 8201bc7 (41660526854 / 41660526869 / 41660526709); final delivery commit runs are re-run and recorded in the final delivery answer.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -6678,7 +6678,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Final Windows build is complete in CI 41646629301; installation testing remains BLOCKED.",
+    "notes": "Final Windows build is complete in CI 41660526709 on 8201bc7; installation testing remains BLOCKED.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -7218,7 +7218,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Unsigned Windows NSIS installer packaged as protected CI artifact 13235581789 on f7d78d5; not installation-tested.",
+    "notes": "Unsigned Windows NSIS installer packaged as protected CI artifacts 13235581789 (f7d78d5) and 13242046945 (8201bc7); not installation-tested.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -7260,7 +7260,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Owner-only generator EXE built as protected artifact 13235615213 on f7d78d5 (7-day retention); never a public release asset.",
+    "notes": "Owner-only generator EXE built as protected artifacts 13235615213 (f7d78d5) and 13241417765 (8201bc7), 7-day retention; never a public release asset.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -7470,7 +7470,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Technical docs and user-facing guides are present; final user manual still in progress.",
+    "notes": "Technical docs, user manual and final unsigned build report are present; production release QA still pending.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -7596,7 +7596,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "CI produced installer/generator sizes and SHA256SUMS; final unsigned build report still pending release QA.",
+    "notes": "CI produced installer/generator sizes and SHA256SUMS; final unsigned build report is present, production release QA still pending.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -7760,7 +7760,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "Windows installer built in CI 41646629301; installation/activation on real hardware still BLOCKED.",
+    "notes": "Windows installer built in CI 41660526709 on 8201bc7; installation/activation on real hardware still BLOCKED.",
     "verification": {
       "understood": true,
       "plan": true,

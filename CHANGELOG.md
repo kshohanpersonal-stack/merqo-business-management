@@ -39,28 +39,39 @@ All notable changes are documented here. Semantic versioning; owner controls rel
 - Windows CI: CRLF schema diff, non-deterministic checklist timestamp, ignored build
   scripts, `EBUSY` on restored DB cleanup, VS 2026 detection, Electron 43 / V8 API
   incompatibility, and npm's automatic node-gyp rebuild during `npm ci`.
+- Security-driven dependency upgrades: Vite `7.2.2` → `7.3.7`, Vitest `3.2.4` → `4.1.12`,
+  Zod `4.1.11` → `4.6.7`, electron-builder `26.0.12` → `26.18.0`, plus explicit
+  `react-is@19.2.0` for Recharts. `npm audit --audit-level=high` now passes with 0
+  high/critical and 28 moderate advisories; the Security workflow now fails on
+  high/critical advisories instead of suppressing them.
 
 ### Verified
-- `npm test` 41/41 (current local 24.10 s; historical Windows CI 23.84 s),
+- `npm test` 41/41 (current local 26.45 s; historical Windows CI 23.84 s),
   `npm run db:verify` 30/30, `npm run typecheck`, `npm run lint`,
-  `npm run format:check`, `npm run licenses` (723 packages), `npm run build`,
+  `npm run format:check`, `npm run licenses` (682 packages), `npm run build`,
   `npm run build:generator`, `npm run secrets`, `npm run smoke` 12/12,
   `npm run qa:e2e` 18/18 and `npm run qa:visual` at four viewports.
 - GitHub Actions: CI `41642232635`, Security `41642232646`, Windows build `41642232644`
   all SUCCESS on `3b11e3a`; re-verified after the docs-only push `efacbaf` with CI
   `41645278808`, Security `41645278586`, Windows build `41645278572` all SUCCESS
   (Windows job 4 m 39 s, 41/41 tests in 22.51 s, 152-file secret scan). Re-verified on
-  `f7d78d5`: CI `41646629269`, Security `41646629348`, Windows `41646629301` all SUCCESS.
-  Final delivery commit workflows are re-run and verified before the delivery answer.
+  `f7d78d5`: CI `41646629269`, Security `41646629348`, Windows `41646629301` all SUCCESS;
+  `8201bc7`: CI `41660526854`, Security `41660526869`, Windows `41660526709` all SUCCESS.
+  Final delivery commit workflows will be re-run and verified before the delivery answer.
 - Windows CI produced `MERQO-Setup-0.1.0-x64.exe` (131,626,408 bytes, artifact
   `13232244667`), `MERQO-License-Generator.exe` (protected artifact `13232224614`), and
   SHA-256 checksum files. The `efacbaf` re-build produced the same unsigned,
   development-key outputs as artifacts `13235565390` / `13235615213`; not released.
+  The `8201bc7` Windows build produced installer artifact `13242046945` (ZIP SHA-256
+  `5f953eceb37e8743e29c0f2084e98bf603deab0a2e29ed43ab507ab340206e8b`) and owner-only
+  generator artifact `13241417765` (ZIP SHA-256
+  `3d4943c09c333df9fb87c567263a94b4a48fed01763419ecf1c48141347d18b5`).
 
 ### Not included / blocked
 - Real Windows installation/activation/shortcut/uninstall/upgrade testing, physical
   thermal printer/scanner tests, Electron-window-specific visual QA, production Ed25519
-  public key replacement, tag-triggered GitHub Release and final unsigned build report.
-  Headless-Chromium renderer visual QA and the 18-step E2E workflow are now executed.
+  public key replacement, tag-triggered GitHub Release and production release QA.
+  The final unsigned build report is present. Headless-Chromium renderer visual QA and the
+  18-step E2E workflow are now executed.
   Unsigned distribution is an explicit owner decision, not a blocker. See
   `docs/KNOWN_ISSUES.md` and `docs/FINAL_BUILD_REPORT.md`.

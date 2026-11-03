@@ -18,7 +18,7 @@ used to regenerate it. `docs/TEST_CASES.md` maps TC IDs to executable tests and 
 | P12-AUTH / P21-SEC | `src/core/auth.ts`, `sessions.ts`, `permissions.ts`, `audit.ts`, `validation.ts`, `logger.ts` | `tests/security/auth.test.ts` |
 | P18-LIC | `src/core/licensing.ts`, `activation.ts`, `src/main/device.ts`, `apps/license-generator/src/index.ts` | `tests/unit/licensing.test.ts`, `tests/integration/activation.test.ts`, `docs/e2e-workflow.json` |
 | P5-LOC / P14-UI / P15-ANIM / P16-GRT / P17-KEY | `src/renderer/i18n.ts`, `App.tsx`, `styles.css`, `components.tsx`, `pages/*` | `scripts/dev/visual-qa.mjs`, `docs/visual-qa/report.json`, `scripts/dev/smoke-preview.mjs` |
-| P19-WIN / P20-CI / P28-DEL | `src/main/*`, `src/preload/index.ts`, `electron-builder.yml`, `.github/workflows/*` | Historical Windows CI `41646629301` / `f7d78d5` (installer `13235581789`, generator `13235615213`); Linux CI `41646629269`, Security `41646629348`; install/release QA `BLOCKED`; final commit runs recorded in delivery answer |
+| P19-WIN / P20-CI / P28-DEL | `src/main/*`, `src/preload/index.ts`, `electron-builder.yml`, `.github/workflows/*` | Green CI on `f7d78d5` (`41646629269` / `41646629348` / `41646629301`) and `8201bc7` (`41660526854` / `41660526869` / `41660526709`); Windows artifacts `13235581789` / `13235615213` → `13242046945` / `13241417765`; install/release QA `BLOCKED`; final security-upgrade commit runs recorded in delivery answer |
 | P22-PERF | `src/core/util.ts`, `reports.ts`, migration indexes | `tests/performance/large-dataset.test.ts` |
 | P25-TST | `tests/`, `scripts/dev/*.mjs` | `docs/test-results.json`, `docs/e2e-workflow.json`, `docs/visual-qa/report.json` |
 
@@ -30,10 +30,16 @@ used to regenerate it. `docs/TEST_CASES.md` maps TC IDs to executable tests and 
 * `f7d78d5`: CI `41646629269` (46 s), Security `41646629348` (27 s), Windows
   `41646629301` (3 m 34 s) — SUCCESS. Windows produced an unsigned NSIS installer and
   protected owner-only generator EXE with checksums.
+* `8201bc7`: CI `41660526854`, Security `41660526869`, Windows `41660526709` (5 m 10 s)
+  — SUCCESS. Windows produced unsigned installer artifact `13242046945` and owner-only
+  generator artifact `13241417765` with checksums. The Security run still had a
+  non-blocking `npm audit` annotation; subsequent dependency upgrades remove all
+  high/critical findings, make the Security workflow fail on high/critical advisories,
+  and leave 28 moderate advisories disclosed.
 * Earlier failures and fixes: `docs/BUILD_HISTORY.md` B-005..B-011.
 * Linux CI now also runs `format:check`, `db:verify`, `qa:e2e` and `qa:visual`; Windows CI
-  runs `db:verify`. These extended workflows are re-run on the final delivery commit and
-  their run IDs recorded in the final delivery answer.
+  runs `db:verify`. These extended workflows are re-run on the final security-upgrade
+  delivery commit and their run IDs recorded in the final delivery answer.
 
 ## Conventions
 

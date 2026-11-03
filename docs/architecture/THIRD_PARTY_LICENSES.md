@@ -7,16 +7,17 @@ before every release; this file records the expected result.
 | --- | --- | --- | --- |
 | Electron | 43.x | MIT | npm package metadata |
 | React / React DOM | 19.x | MIT | npm package metadata |
-| Vite / esbuild / TypeScript | pinned | MIT / Apache-2.0 | npm package metadata |
+| Vite / esbuild / TypeScript | 7.3.7 / 0.25.10 / 5.9.3 | MIT / Apache-2.0 | npm package metadata |
 | better-sqlite3 | 13.0.3 (N-API) | MIT | [1](https://www.npmjs.com/package/better-sqlite3), [3](https://dev.co/databases/open-source/better-sqlite3) |
 | ExcelJS | 4.4.0 | MIT | [1](https://www.npmjs.com/package/exceljs) |
 | PDFKit | 0.17.x | MIT | [1](https://www.npmjs.com/package/pdfkit) |
 | qrcode | 1.5.x | MIT | npm package metadata |
 | Recharts | 3.x | MIT | npm package metadata |
 | Lucide React | 0.4xx | ISC | npm package metadata |
-| Zod | 4.x | MIT | npm package metadata |
-| electron-builder | 26.x | MIT | npm package metadata |
-| Vitest | 3.x | MIT | npm package metadata |
+| Zod | 4.6.7 | MIT | npm package metadata |
+| electron-builder | 26.18.0 | MIT | npm package metadata |
+| Vitest | 4.1.12 | MIT | npm package metadata |
+| react-is | 19.2.0 | MIT | npm package metadata (explicit Recharts peer) |
 | Noto Sans Bengali | bundled | SIL OFL 1.1 | [1](https://www.fonthubs.com/en/fonts/noto-sans-bengali) |
 
 The OFL licence text is bundled at `assets/fonts/OFL.txt`. Font name must not be used to
@@ -26,7 +27,7 @@ No dependency requires a paid API, subscription, online activation or recurring 
 
 ## Verified transitive exceptions (2026-11-03)
 
-`npm run licenses` inspected all 723 installed packages by reading each installed
+`npm run licenses` inspected all 682 installed packages by reading each installed
 `package.json` (not only registry metadata). Three packages needed explicit
 verification; `scripts/dev/check-licenses.mjs` records these overrides with the
 same rationale:
@@ -37,7 +38,11 @@ same rationale:
 | `buffers@0.1.1` | omitted from published package.json | MIT/X11 | Upstream `node-buffers` package.json declares `MIT/X11` ([1](https://github.com/bitpay/node-buffers/blob/master/package.json)); Snyk reports MIT ([5](https://security.snyk.io/package/npm/buffers/0.1.1)). |
 | `truncate-utf8-bytes@1.0.2` | WTFPL | WTFPL | Declared in its package.json; permissive public-domain-equivalent licence allowing commercial use. |
 
-Result: **PASS — 708/708 packages report an allow-listed licence.**
+Result: **PASS — 682/682 packages report an allow-listed licence.**
+Security-driven upgrades moved Vite to 7.3.7, Vitest to 4.1.12, Zod to 4.6.7 and
+electron-builder to 26.18.0, and added `react-is@19.2.0` as an explicit Recharts peer.
+`npm audit --audit-level=high` now passes with no high or critical findings; 28 moderate
+transitive build/test-tool advisories remain disclosed rather than suppressed.
 All three are transitive dependencies of PDFKit/ExcelJS; none is shipped separately.
 Upgrading `better-sqlite3` from 12.4.1 to 13.0.3 removed 16 legacy build-time packages
 (including `prebuild-install`) and added `node-addon-api@8.9.2` (MIT). Version 13 ships a

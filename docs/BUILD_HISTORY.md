@@ -25,6 +25,10 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | B-018 | 2026-11-03 | Windows `41646629301` (commit `f7d78d5`) | `windows-latest` | 0.1.0 | **PASS** | 41/41 tests, unsigned NSIS installer, owner-only generator EXE, checksums, protected artifacts; installer ZIP SHA-256 `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413` |
 | B-019 | 2026-11-03 | CI `41646629269` (commit `f7d78d5`) | `ubuntu-latest` | 0.1.0 | **PASS** | Full quality gate green; test evidence artifact |
 | B-020 | 2026-11-03 | Security `41646629348` (commit `f7d78d5`) | `ubuntu-latest` | 0.1.0 | **PASS** | Secret scan, non-blocking `npm audit` annotation, licence allow-list, owner-only-artifact policy |
+| B-021 | 2026-11-03 | Windows `41660526709` (commit `8201bc7`) | `windows-2025-vs2026` | 0.1.0 | **PASS** | 41/41 tests, SQLite 3.53.4, unsigned NSIS installer (131,630,712 bytes), owner-only generator EXE, checksums, protected artifacts; installer ZIP SHA-256 `5f953eceb37e8743e29c0f2084e98bf603deab0a2e29ed43ab507ab340206e8b` |
+| B-022 | 2026-11-03 | CI `41660526854` (commit `8201bc7`) | `ubuntu-26.04` | 0.1.0 | **PASS** | 41/41 tests, 30/30 DB checks, 18/18 E2E, 18-page visual QA, build, 723 licences, 173-file secret scan; QA evidence artifact `13242311120` |
+| B-023 | 2026-11-03 | Security `41660526869` (commit `8201bc7`) | `ubuntu-26.04` | 0.1.0 | **PASS** | Secret scan, non-blocking `npm audit` annotation, 723-package licence allow-list, owner-only-artifact policy |
+| B-024 | 2026-11-03 | Local rebuild after security upgrades | Linux (Vite 7.3.7 / Vitest 4.1.12 / electron-builder 26.18.0) | 0.1.0 | **PASS** | `dist-electron/main.cjs` 1002.2 kB, 682 licences, `npm audit --audit-level=high` PASS (0 high/critical, 28 moderate), 41/41 tests (26.45 s), smoke 12/12, E2E 18/18, visual QA PASS |
 
 ### Windows CI artifacts from B-012 (not released)
 
@@ -40,7 +44,7 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,411 bytes | 13235565390 | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` (ZIP 131,637,535 bytes) |
 | `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13235615213 | `64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d` (ZIP 34,334,219 bytes, 7-day retention) |
 
-B-012, B-015 and B-018 outputs are unsigned and embed the development public key.
+B-012, B-015, B-018 and B-021 outputs are unsigned and embed the development public key.
 `SHA256SUMS.txt` and `SHA256SUMS-PRIVATE.txt` were generated and uploaded in B-012; the
 sandbox cannot download the artifact blobs, so the individual per-file hashes are not
 reproduced here. The owner-only artifact has 7-day retention and is never a public
@@ -54,6 +58,16 @@ unverified; SmartScreen/Defender warnings vary. No security bypass is included.
 | --- | --- | --- | --- |
 | `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 13235581789 | `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413` (ZIP 131,637,527 bytes) |
 | `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | 13235615213 | `b65f2bcfcf7bfb611bcaa25c927164bd61c497801ab2ccfd4bfe5869d8b37130` (ZIP 34,334,219 bytes, 7-day retention) |
+
+### Windows CI artifacts from B-021 / `8201bc7` (not released)
+
+| Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
+| --- | --- | --- | --- | --- |
+| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,630,712 bytes | 13242046945 | `5f953eceb37e8743e29c0f2084e98bf603deab0a2e29ed43ab507ab340206e8b` (ZIP 131,641,727 bytes) |
+| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13241417765 | `3d4943c09c333df9fb87c567263a94b4a48fed01763419ecf1c48141347d18b5` (ZIP 34,334,219 bytes, 7-day retention) |
+
+Final security-upgrade delivery commit runs and artifact IDs are recorded in the final
+delivery answer; this table records the last complete pre-upgrade Windows build.
 
 Development-only artefacts intentionally **not** shipped: `private/dev-license.merqolic`,
 `private/merqo-dev-ed25519-private.pem`, `private/generator-test.merqolic`,

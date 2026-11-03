@@ -28,7 +28,9 @@ On Windows use `npm ci --ignore-scripts` followed by
 1. `npm ci --ignore-scripts`, explicit Electron install, typecheck, 41/41 Vitest tests,
    production build, SQLite N-API load check.
 2. `npx electron-builder --win --x64 --publish never` → unsigned NSIS installer.
-3. Secret scan of public output, owner-only Node SEA licence generator EXE.
+3. Secret scan of public output, owner-only Node SEA licence generator EXE. Current pins
+   are Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7, electron-builder 26.18.0 and react-is 19.2.0;
+   `npm audit --audit-level=high` passes with 0 high/critical and 28 moderate advisories.
 4. SHA-256 checksums for both public and private outputs.
 5. Two artifacts: `MERQO-Windows-Installer` (public candidate) and
    `MERQO-OWNER-ONLY-License-Generator` (protected, 7-day retention, never a public

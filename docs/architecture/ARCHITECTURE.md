@@ -20,7 +20,9 @@
 Dependency direction is strictly downward: presentation → application → business →
 database. Domain modules never import React or Electron. Configuration and logging are
 cross-cutting leaves. The Vite preview plugin and Electron main both construct the same
-`createContext({ db, ... })` and call the same `dispatch()`.
+`createContext({ db, ... })` and call the same `dispatch()`. Security-maintained toolchain
+pins are Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7, electron-builder 26.18.0 and
+react-is 19.2.0; `npm audit --audit-level=high` passes with no high/critical findings.
 
 ## 2. Runtime topologies
 

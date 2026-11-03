@@ -52,6 +52,9 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
   backups are supported.
 * Password hashing uses scrypt (OWASP fallback), not Argon2id.
 * ExcelJS 4.4.0 is MIT but stale; a maintained fork is a post-1.0 consideration.
+* `npm audit --audit-level=high` passes after security upgrades and the Security workflow
+  now fails on high/critical advisories; 28 moderate transitive build/test-tool advisories
+  remain and are disclosed in `docs/KNOWN_ISSUES.md` KI-018.
 * English UI coverage is described honestly in `docs/USER_MANUAL.md`; Bangla is primary.
 
 ## Security
@@ -61,3 +64,5 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
 * No production private key is embedded in the customer app or committed to the repo.
 * Owner-only generator and private keys must remain private; never publish them in
   GitHub Releases.
+* Dependency versions were upgraded for security (Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7,
+  electron-builder 26.18.0, react-is 19.2.0); moderate audit advisories remain disclosed.
