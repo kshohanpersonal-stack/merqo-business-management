@@ -19,11 +19,13 @@ jobs:
           ref: ${{ github.event.inputs.tag || github.ref }}
       - uses: actions/setup-node@v4
         with: { node-version: '22', cache: npm }
-      - run: npm ci
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: npm ci --ignore-scripts
+      - run: node node_modules/electron/install.js
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - run: npx electron-builder install-app-deps --platform=win32 --arch=x64
       - run: npx electron-builder --win --x64 --publish never
       - run: node scripts/build/verify-no-secrets.mjs
       - name: Generate checksums for authorized public assets only
