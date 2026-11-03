@@ -30,7 +30,7 @@ export function createAppContext(options?: { dataDir?: string; dbPath?: string }
     logger,
     now: () => new Date().toISOString(),
     close: () => {
-      db.close();
+      ctx.db.close();
       if (singleton === ctx) singleton = undefined;
     },
   };

@@ -67,12 +67,25 @@ export function makeHarness(): TestHarness {
     keys,
     call,
     cleanup: () => {
-      try {
-        db.close();
-      } catch {
-        /* already closed */
+      // restoreBackup() replaces ctx.db with a freshly opened connection; closing
+      // only the originally captured handle leaves that file locked on Windows.
+      for (const handle of new Set([ctx.db, db])) {
+        try {
+          handle.close();
+        } catch {
+          /* already closed */
+        }
       }
-      rmSync(dir, { recursive: true, force: true });
+      // Windows may release the SQLite file handle a tick later.
+      for (let attempt = 0; attempt < 10; attempt++) {
+        try {
+          rmSync(dir, { recursive: true, force: true });
+          return;
+        } catch (error) {
+          if (attempt === 9) throw error;
+          Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 25);
+        }
+      }
     },
   };
 }
