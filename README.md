@@ -16,7 +16,7 @@ Founder: Shohan Khan · merqoonline@gmail.com.
 > delivery commit is re-verified and its run IDs recorded in the delivery answer. The
 > unsigned installer and owner-only generator exist as protected CI artifacts with
 > development-key activation. Security-driven dependency upgrades removed all high/critical
-> `npm audit` findings; 28 moderate build/test-tool advisories remain disclosed. No version
+> `npm audit` findings; 31 moderate build/test-tool advisories remain disclosed. No version
 > tag or GitHub Release exists. Nothing in this README claims production readiness.
 
 ## What is implemented
@@ -112,7 +112,7 @@ typecheck/lint/format/licences clean, renderer + Electron bundles built, 30/30 d
 checks, 12/12 preview API smoke checks, 18/18 E2E workflow checks and headless-Chromium
 visual QA at four viewports. Security-driven upgrades moved Vite to 7.3.7, Vitest to
 4.1.12, Zod to 4.6.7, electron-builder to 26.18.0 and added `react-is@19.2.0`;
-`npm audit --audit-level=high` passes with 0 high/critical and 28 moderate advisories.
+`npm audit --audit-level=high` passes with 0 high/critical and 31 moderate advisories.
 Final CI/Security/Windows runs are re-run on the exact delivery commit and their
 conclusions verified before the delivery answer. Windows installation/activation testing,
 hardware QA, production key, version tag and GitHub Release remain **BLOCKED** — see

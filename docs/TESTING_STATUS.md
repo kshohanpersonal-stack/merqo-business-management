@@ -22,7 +22,7 @@ is never counted as an application test. Machine-readable Vitest output:
 | ESLint | `npm run lint` | **PASSED** (0 errors, 0 warnings) | — |
 | Prettier | `npm run format:check` | **PASSED** | — |
 | Third-party licences | `npm run licenses` | **PASSED** — 682 installed packages allow-listed | `docs/architecture/THIRD_PARTY_LICENSES.md` |
-| Dependency audit | `npm audit --audit-level=high` | **PASSED** — 0 high/critical, 28 moderate advisories disclosed | local command; `docs/KNOWN_ISSUES.md` KI-018 |
+| Dependency audit | `npm audit --audit-level=high` | **PASSED** — 0 high/critical, 31 moderate advisories disclosed | local command; `docs/KNOWN_ISSUES.md` KI-018 |
 | Secret scan (tracked files) | `npm run secrets` | **PASSED** — 173 tracked files after staging all delivery files | `scripts/dev/secret_scan.py` |
 | Renderer + Electron bundles | `npm run build` | **PASSED** | `dist/`, `dist-electron/` |
 | Owner-only generator | `npm run build:generator` | **PASSED** — SEA blob 17,756 bytes; CLI `help` smoke test | `dist-electron/license-generator.blob` |

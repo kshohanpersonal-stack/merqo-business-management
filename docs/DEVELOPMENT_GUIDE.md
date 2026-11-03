@@ -6,7 +6,7 @@ See `docs/architecture/ARCHITECTURE.md`. Layers: renderer → dispatcher → cor
 SQLite. The Vite preview plugin (`src/server/api.ts`) and Electron main process call the
 same `dispatch()` with the same `createContext()`. Never put SQL in the renderer. Current
 security-maintained pins: Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7, electron-builder 26.18.0
-and react-is 19.2.0; `npm audit --audit-level=high` passes with 0 high/critical and 28
+and react-is 19.2.0; `npm audit --audit-level=high` passes with 0 high/critical and 31
 moderate advisories.
 
 ## Commands

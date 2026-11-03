@@ -11,7 +11,7 @@ upgrades are implemented and locally verified. Green workflows on `f7d78d5` are 
 `41646629269`, Security `41646629348`, Windows `41646629301`; green workflows on
 `8201bc7` are CI `41660526854`, Security `41660526869`, Windows `41660526709`. The final
 security-upgrade delivery commit workflows are re-run and their run IDs recorded in the
-delivery answer. `npm audit --audit-level=high` now passes with 0 high/critical and 28
+delivery answer. `npm audit --audit-level=high` now passes with 0 high/critical and 31
 moderate advisories; no warning is suppressed.
 
 1. Stage all delivery files, run `npm run secrets` again so new tracked files are scanned,

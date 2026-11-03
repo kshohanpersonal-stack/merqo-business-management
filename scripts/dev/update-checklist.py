@@ -262,7 +262,7 @@ DELIVERED_IDS = {
     "R-P28-DEL-004": ("TESTING", "Professional NSIS installer built in CI; installation QA remains BLOCKED."),
     "R-P28-DEL-010": ("TESTING", "CI produced installer/generator sizes and SHA256SUMS; final unsigned build report is present, production release QA still pending."),
     "R-P18-LIC-010": ("TESTING", "Owner-only generator EXE built and uploaded as protected CI artifacts 13235615213 (f7d78d5) and 13241417765 (8201bc7); real owner-PC execution NOT TESTED."),
-    "R-P3-ARCH-003": ("PASSED", "npm run licenses verified 682 installed packages against the commercial allow-list; npm audit --audit-level=high passes with 28 moderate advisories and no high/critical findings after security upgrades."),
+    "R-P3-ARCH-003": ("PASSED", "npm run licenses verified 682 installed packages against the commercial allow-list; npm audit --audit-level=high passes with 31 moderate advisories and no high/critical findings after security upgrades."),
     "R-P5-LOC-004": ("PASSED", "Noto Sans Bengali WOFF2/TTF and assets/fonts/OFL.txt bundled."),
     "R-P10-EXP-003": ("PASSED", "UTF-8 CSV with Bangla headers verified by executed report export test."),
     "R-P18-LIC-002": ("PASSED", "Ed25519 public key embedded; private key only in ignored private/, never in main app."),

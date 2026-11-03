@@ -188,7 +188,7 @@ All decisions above are now reflected in source, not just planned:
   `3.2.4` → `4.1.12`, Zod `4.1.11` → `4.6.7`, electron-builder `26.0.12` → `26.18.0`,
   plus explicit `react-is@19.2.0` for Recharts. These were made because `npm audit`
   reported high/critical advisories in the pinned build/test toolchain; after the upgrades
-  `npm audit --audit-level=high` passes with 0 high/critical and 28 moderate advisories.
+  `npm audit --audit-level=high` passes with 0 high/critical and 31 moderate advisories.
   No audit warning was suppressed; the Security workflow now fails on high/critical
   advisories and the moderate findings are disclosed in `KNOWN_ISSUES.md` /
   `RISK_REGISTER.md`.

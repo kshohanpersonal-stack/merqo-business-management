@@ -42,7 +42,7 @@ All notable changes are documented here. Semantic versioning; owner controls rel
 - Security-driven dependency upgrades: Vite `7.2.2` → `7.3.7`, Vitest `3.2.4` → `4.1.12`,
   Zod `4.1.11` → `4.6.7`, electron-builder `26.0.12` → `26.18.0`, plus explicit
   `react-is@19.2.0` for Recharts. `npm audit --audit-level=high` now passes with 0
-  high/critical and 28 moderate advisories; the Security workflow now fails on
+  high/critical and 31 moderate advisories; the Security workflow now fails on
   high/critical advisories instead of suppressing them.
 
 ### Verified

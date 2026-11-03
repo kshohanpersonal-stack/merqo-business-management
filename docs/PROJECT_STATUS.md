@@ -41,7 +41,7 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
   Defender/SmartScreen bypass, no trusted-publisher claim.
 - Applied security-driven dependency upgrades: Vite 7.3.7, Vitest 4.1.12, Zod 4.6.7,
   electron-builder 26.18.0 and explicit `react-is@19.2.0`. `npm audit --audit-level=high`
-  now passes with 0 high/critical and 28 moderate advisories; all 41 tests, build,
+  now passes with 0 high/critical and 31 moderate advisories; all 41 tests, build,
   smoke, E2E and visual QA were re-run after the upgrades.
 
 ## Reproducible verification executed on the current worktree
@@ -54,7 +54,7 @@ Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
 | `npm test` | 11 files / 41 tests PASS, 26.45 s (fresh `docs/test-results.json`) |
 | `npm run db:verify` | 30/30 PASS |
 | `npm run licenses` | 682 installed packages allow-listed, PASS |
-| `npm audit --audit-level=high` | PASS: 0 high/critical, 28 moderate advisories disclosed |
+| `npm audit --audit-level=high` | PASS: 0 high/critical, 31 moderate advisories disclosed |
 | `npm run secrets` | 173 tracked files after staging all delivery files, PASS |
 | `npm run build` | renderer + Electron main/preload PASS |
 | `npm run build:generator` | PASS (SEA blob 17,756 bytes; CLI smoke test) |

@@ -17,7 +17,7 @@ completion gate remains **BLOCKED** for external/hardware and production-key ite
 | Database verification | 30/30 PASS | `npm run db:verify` |
 | Typecheck / lint / format | PASS | local commands |
 | Third-party licences | 682 packages allow-listed, PASS | `npm run licenses` |
-| Dependency audit | `npm audit --audit-level=high` PASS: 0 high/critical, 28 moderate advisories disclosed | local command; `docs/KNOWN_ISSUES.md` KI-018 |
+| Dependency audit | `npm audit --audit-level=high` PASS: 0 high/critical, 31 moderate advisories disclosed | local command; `docs/KNOWN_ISSUES.md` KI-018 |
 | Tracked-file secret scan | PASS | `npm run secrets` |
 | Preview API smoke | 12/12 PASS | `npm run smoke` |
 | 18-step owner E2E workflow | 18/18 PASS | `docs/e2e-workflow.json` |

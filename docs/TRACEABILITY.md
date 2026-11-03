@@ -35,7 +35,7 @@ used to regenerate it. `docs/TEST_CASES.md` maps TC IDs to executable tests and 
   generator artifact `13241417765` with checksums. The Security run still had a
   non-blocking `npm audit` annotation; subsequent dependency upgrades remove all
   high/critical findings, make the Security workflow fail on high/critical advisories,
-  and leave 28 moderate advisories disclosed.
+  and leave 31 moderate advisories disclosed.
 * Earlier failures and fixes: `docs/BUILD_HISTORY.md` B-005..B-011.
 * Linux CI now also runs `format:check`, `db:verify`, `qa:e2e` and `qa:visual`; Windows CI
   runs `db:verify`. These extended workflows are re-run on the final security-upgrade

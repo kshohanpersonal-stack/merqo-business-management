@@ -53,7 +53,7 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
 * Password hashing uses scrypt (OWASP fallback), not Argon2id.
 * ExcelJS 4.4.0 is MIT but stale; a maintained fork is a post-1.0 consideration.
 * `npm audit --audit-level=high` passes after security upgrades and the Security workflow
-  now fails on high/critical advisories; 28 moderate transitive build/test-tool advisories
+  now fails on high/critical advisories; 31 moderate transitive build/test-tool advisories
   remain and are disclosed in `docs/KNOWN_ISSUES.md` KI-018.
 * English UI coverage is described honestly in `docs/USER_MANUAL.md`; Bangla is primary.
 

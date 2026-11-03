@@ -41,7 +41,7 @@ same rationale:
 Result: **PASS — 682/682 packages report an allow-listed licence.**
 Security-driven upgrades moved Vite to 7.3.7, Vitest to 4.1.12, Zod to 4.6.7 and
 electron-builder to 26.18.0, and added `react-is@19.2.0` as an explicit Recharts peer.
-`npm audit --audit-level=high` now passes with no high or critical findings; 28 moderate
+`npm audit --audit-level=high` now passes with no high or critical findings; 31 moderate
 transitive build/test-tool advisories remain disclosed rather than suppressed.
 All three are transitive dependencies of PDFKit/ExcelJS; none is shipped separately.
 Upgrading `better-sqlite3` from 12.4.1 to 13.0.3 removed 16 legacy build-time packages

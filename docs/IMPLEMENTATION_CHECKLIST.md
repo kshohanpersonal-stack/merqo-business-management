@@ -22,7 +22,7 @@ This is the session-level execution checklist; the 247-item requirement register
 | EX-13 | Version tag / public GitHub Release | tag-triggered `release.yml` | **BLOCKED** | owner authorisation and readiness gates not met; no release published |
 | EX-14 | Trusted Authenticode signature / SmartScreen clearance | owner certificate | **NOT APPLICABLE** | owner explicitly declined purchase; unsigned build accepted |
 | EX-15 | Final unsigned production build report | `docs/FINAL_BUILD_REPORT.md` | **TESTING** | evidence report present; cannot be a released-product report until EX-10..EX-13 are resolved or explicitly disclosed |
-| EX-16 | Remove high/critical dependency advisories | `package.json`, `package-lock.json`, `docs/KNOWN_ISSUES.md` | **PASSED** | Vite 7.3.7 / Vitest 4.1.12 / Zod 4.6.7 / electron-builder 26.18.0 / react-is 19.2.0; `npm audit --audit-level=high` PASS with 28 moderate advisories disclosed |
+| EX-16 | Remove high/critical dependency advisories | `package.json`, `package-lock.json`, `docs/KNOWN_ISSUES.md` | **PASSED** | Vite 7.3.7 / Vitest 4.1.12 / Zod 4.6.7 / electron-builder 26.18.0 / react-is 19.2.0; `npm audit --audit-level=high` PASS with 31 moderate advisories disclosed |
 
 Every status change requires executed evidence. `NOT APPLICABLE` is used only for the
 owner's explicit decision to distribute unsigned builds, not to hide a defect.

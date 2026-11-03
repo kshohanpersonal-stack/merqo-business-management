@@ -49,7 +49,7 @@ public Release remain **BLOCKED**. This is not a completion claim.
    `docs/visual-qa/` and `docs/e2e-workflow.json`. Linux CI now executes both.
 8. **Verification (current local worktree)** — `npm test` 41/41 (26.45 s),
    `npm run typecheck`, `lint`, `format:check`, `licenses` (682 packages),
-   `npm audit --audit-level=high` PASS (0 high/critical, 28 moderate), `db:verify` 30/30,
+   `npm audit --audit-level=high` PASS (0 high/critical, 31 moderate), `db:verify` 30/30,
    `build`, `build:generator`, `secrets`, `smoke` 12/12, `qa:e2e` 18/18 and `qa:visual`
    at four viewports.
 9. **CI and Windows build** — fixed CRLF schema comparisons, deterministic requirement
@@ -60,7 +60,7 @@ public Release remain **BLOCKED**. This is not a completion claim.
 10. **Security-driven dependency upgrades** — Vite `7.2.2` → `7.3.7`, Vitest `3.2.4` →
     `4.1.12`, Zod `4.1.11` → `4.6.7`, electron-builder `26.0.12` → `26.18.0` and
     explicit `react-is@19.2.0`. `npm audit --audit-level=high` now passes with no
-    high/critical findings; 28 moderate transitive build/test-tool advisories remain
+    high/critical findings; 31 moderate transitive build/test-tool advisories remain
     disclosed. All local quality gates and QA suites were re-run after the upgrades.
 
 ## Not done / blocked

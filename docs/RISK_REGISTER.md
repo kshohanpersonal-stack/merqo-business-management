@@ -12,6 +12,6 @@
 | RK-008 | Backup/restore corrupting customer data | Low | Critical | Checksum, integrity check, compatibility check, mandatory safety backup, atomic replace, restore verification | Low |
 | RK-009 | Performance degradation with large datasets | Medium | Medium | Indexes, server-side pagination, ANALYZE after import, measured performance tests | Low |
 | RK-010 | Third-party licence incompatibility | Low | High | Allow-list of permissive licences, `npm run licenses` in CI (682 packages), OFL text bundled | Low |
-| RK-013 | Residual moderate dependency advisories | Medium | Low | Security-driven upgrades removed all high/critical `npm audit` findings; 28 moderate transitive build/test-tool advisories disclosed in KI-018 and rechecked by `npm audit --audit-level=high` | Low |
+| RK-013 | Residual moderate dependency advisories | Medium | Low | Security-driven upgrades removed all high/critical `npm audit` findings; 31 moderate transitive build/test-tool advisories disclosed in KI-018 and rechecked by `npm audit --audit-level=high` | Low |
 | RK-011 | Hardware variability of scanners/printers | Medium | Medium | Keyboard-wedge standard path, configurable printer profile, graceful failure handling | Medium |
 | RK-012 | Unauthorised staff actions | Medium | High | Server-side permission checks, audit trail, sensitive-action confirmation | Low |

@@ -429,7 +429,7 @@
       "scripts/dev/visual-qa.mjs",
       "scripts/dev/e2e-workflow.mjs"
     ],
-    "notes": "npm run licenses verified 682 installed packages against the commercial allow-list; npm audit --audit-level=high passes with 28 moderate advisories and no high/critical findings after security upgrades.",
+    "notes": "npm run licenses verified 682 installed packages against the commercial allow-list; npm audit --audit-level=high passes with 31 moderate advisories and no high/critical findings after security upgrades.",
     "verification": {
       "understood": true,
       "plan": true,

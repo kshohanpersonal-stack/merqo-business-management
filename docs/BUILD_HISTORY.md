@@ -28,7 +28,7 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | B-021 | 2026-11-03 | Windows `41660526709` (commit `8201bc7`) | `windows-2025-vs2026` | 0.1.0 | **PASS** | 41/41 tests, SQLite 3.53.4, unsigned NSIS installer (131,630,712 bytes), owner-only generator EXE, checksums, protected artifacts; installer ZIP SHA-256 `5f953eceb37e8743e29c0f2084e98bf603deab0a2e29ed43ab507ab340206e8b` |
 | B-022 | 2026-11-03 | CI `41660526854` (commit `8201bc7`) | `ubuntu-26.04` | 0.1.0 | **PASS** | 41/41 tests, 30/30 DB checks, 18/18 E2E, 18-page visual QA, build, 723 licences, 173-file secret scan; QA evidence artifact `13242311120` |
 | B-023 | 2026-11-03 | Security `41660526869` (commit `8201bc7`) | `ubuntu-26.04` | 0.1.0 | **PASS** | Secret scan, non-blocking `npm audit` annotation, 723-package licence allow-list, owner-only-artifact policy |
-| B-024 | 2026-11-03 | Local rebuild after security upgrades | Linux (Vite 7.3.7 / Vitest 4.1.12 / electron-builder 26.18.0) | 0.1.0 | **PASS** | `dist-electron/main.cjs` 1002.2 kB, 682 licences, `npm audit --audit-level=high` PASS (0 high/critical, 28 moderate), 41/41 tests (26.45 s), smoke 12/12, E2E 18/18, visual QA PASS |
+| B-024 | 2026-11-03 | Local rebuild after security upgrades | Linux (Vite 7.3.7 / Vitest 4.1.12 / electron-builder 26.18.0) | 0.1.0 | **PASS** | `dist-electron/main.cjs` 1002.2 kB, 682 licences, `npm audit --audit-level=high` PASS (0 high/critical, 31 moderate), 41/41 tests (26.45 s), smoke 12/12, E2E 18/18, visual QA PASS |
 
 ### Windows CI artifacts from B-012 (not released)
 
