@@ -187,3 +187,10 @@ All decisions above are now reflected in source, not just planned:
   and `Context::GetIsolate` were removed/changed). Version 13 ships one N-API prebuild per
   platform that loads in both Node 22 and Electron 43, so `electron-builder` uses
   `npmRebuild: false` and the Windows workflow no longer performs an ABI rebuild.
+
+* CI evidence (commit `3b11e3a`): three push-triggered workflows are green — CI
+  `41642232635`, Security `41642232646`, Windows build `41642232644`. The Windows job
+  produced `MERQO-Setup-0.1.0-x64.exe` and `MERQO-License-Generator.exe` as protected
+  unsigned artifacts. `npm ci --ignore-scripts` plus an explicit Electron install replaces
+  the old ABI rebuild; `electron-builder.yml` sets `npmRebuild: false`. Installation,
+  activation, trusted signing and release remain outside this evidence and are BLOCKED.

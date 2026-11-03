@@ -27,8 +27,22 @@ MERQO-র কাছ থেকে পাওয়া `.merqolic` ফাইলটি 
 `npm run db:verify` এবং অ্যাপের "সমন্বয় যাচাই" চালান। কোনো কিছু মুছবেন না; ব্যাকআপ নিয়ে
 MERQO-র সহায়তায় অডিট লগসহ পর্যালোচনা করুন।
 
+## Windows-এ `better-sqlite3` / node-gyp ত্রুটি
+`better-sqlite3@13.0.3` N-API প্রিবিল্ট ব্যবহার করে; Electron-ABI রিবিল্ড প্রয়োজন নেই।
+Windows-এ সাধারণ `npm ci` চালালে npm স্বয়ংক্রিয়ভাবে `binding.gyp`-এর জন্য
+`node-gyp rebuild` চালিয়ে VS 2026-এ ব্যর্থ হতে পারে। Windows CI-এর মতো ব্যবহার করুন:
+
+```powershell
+npm ci --ignore-scripts
+node node_modules/electron/install.js
+npm run build:win
+```
+
+`electron-builder.yml`-এ `npmRebuild: false` আছে; `electron-builder install-app-deps`
+চালাবেন না। Linux-এ সাধারণ `npm ci` যথেষ্ট।
+
 ## সাধারণ ডেভেলপমেন্ট
-`npm ci` → `npm run dev`. যদি `better-sqlite3` নেটিভ মডিউল ABI ত্রুটি দেয়,
-`npm rebuild better-sqlite3` চালান (Windows-এ `electron-builder install-app-deps`)।
-`npm test`, `npm run typecheck`, `npm run lint`, `npm run format:check` এবং
-`npm run licenses` রিলিজের আগে বাধ্যতামূলক।
+`npm ci` → `npm run dev`. রিলিজের আগে `npm test`, `npm run typecheck`, `npm run lint`,
+`npm run format:check`, `npm run licenses`, `npm run db:verify`, `npm run smoke` এবং
+`npm run secrets` বাধ্যতামূলক। CI রান আইডি ও আর্টিফ্যাক্টের তথ্য
+`docs/BUILD_HISTORY.md` ও `docs/TESTING_STATUS.md`-এ আছে।
