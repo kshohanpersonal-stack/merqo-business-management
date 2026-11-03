@@ -33,7 +33,7 @@
     "checklist": "python3 scripts/dev/update-checklist.py --committed && python3 scripts/dev/generate_requirements.py"
   },
   "dependencies": {
-    "better-sqlite3": "12.4.1",
+    "better-sqlite3": "13.0.3",
     "date-fns": "4.1.0",
     "exceljs": "4.4.0",
     "lucide-react": "0.544.0",

@@ -17,15 +17,9 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - name: Rebuild native SQLite module for Electron ABI
-        # @electron/node-gyp bundled with Electron 43 does not recognise VS 2026
-        # (major 18); expose it through the VS Command Prompt variables that its
-        # "specified location" path understands, reporting a VS 2022 toolset.
-        env:
-          VCINSTALLDIR: 'C:\Program Files\Microsoft Visual Studio\18\Enterprise\VC'
-          VSCMD_VER: '17.0.0'
-          WindowsSDKVersion: '10.0.26100.0\'
-        run: npx electron-builder install-app-deps --platform=win32 --arch=x64
+      - name: Verify N-API SQLite binary loads on Windows
+        # better-sqlite3 13 ships N-API prebuilds, so no Electron ABI rebuild is needed.
+        run: node -e "const Database=require('better-sqlite3'); const db=new Database(':memory:'); console.log('sqlite', db.prepare('select sqlite_version() v').get().v); db.close();"
       - name: Build NSIS installer
         run: npx electron-builder --win --x64 --publish never
       - name: Verify no private material is in public output

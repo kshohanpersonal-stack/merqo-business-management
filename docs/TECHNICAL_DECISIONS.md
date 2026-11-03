@@ -182,3 +182,8 @@ All decisions above are now reflected in source, not just planned:
   "equivalent component" decision.
 * Light theme only, thermal receipt printing only, no cloud/telemetry, no artificial record
   limits, and no expiry/online-renewal fields in the lifetime licence payload.
+* SQLite driver: `better-sqlite3@13.0.3` (N-API) replaced 12.4.1. The 12.x V8 binding did
+  not compile against Electron 43's V8 headers (`v8::External::Value`, `PropertyCallbackInfo::This`
+  and `Context::GetIsolate` were removed/changed). Version 13 ships one N-API prebuild per
+  platform that loads in both Node 22 and Electron 43, so `electron-builder` uses
+  `npmRebuild: false` and the Windows workflow no longer performs an ABI rebuild.

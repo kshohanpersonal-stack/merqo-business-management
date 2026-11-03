@@ -7,7 +7,7 @@ const allow = ['MIT', 'ISC', 'Apache-2.0', 'BSD-2-Clause', 'BSD-3-Clause', '0BSD
   'LGPL-3.0-or-later', 'WTFPL', 'MIT/X11'];
 /**
  * Documented overrides for packages whose published package.json omits the
- * licence. Evidence is retained in docs/THIRD_PARTY_LICENSES.md.
+ * licence. Evidence is retained in docs/architecture/THIRD_PARTY_LICENSES.md.
  */
 const overrides = new Map([
   ['png-js@1.1.0', 'MIT'],       // node_modules/png-js/LICENSE contains the full MIT text.

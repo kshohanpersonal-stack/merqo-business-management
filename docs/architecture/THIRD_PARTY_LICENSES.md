@@ -8,7 +8,7 @@ before every release; this file records the expected result.
 | Electron | 43.x | MIT | npm package metadata |
 | React / React DOM | 19.x | MIT | npm package metadata |
 | Vite / esbuild / TypeScript | pinned | MIT / Apache-2.0 | npm package metadata |
-| better-sqlite3 | 12.x | MIT | [1](https://www.npmjs.com/package/better-sqlite3), [3](https://dev.co/databases/open-source/better-sqlite3) |
+| better-sqlite3 | 13.0.3 (N-API) | MIT | [1](https://www.npmjs.com/package/better-sqlite3), [3](https://dev.co/databases/open-source/better-sqlite3) |
 | ExcelJS | 4.4.0 | MIT | [1](https://www.npmjs.com/package/exceljs) |
 | PDFKit | 0.17.x | MIT | [1](https://www.npmjs.com/package/pdfkit) |
 | qrcode | 1.5.x | MIT | npm package metadata |
@@ -26,7 +26,7 @@ No dependency requires a paid API, subscription, online activation or recurring 
 
 ## Verified transitive exceptions (2026-11-03)
 
-`npm run licenses` inspected all 722 installed packages by reading each installed
+`npm run licenses` inspected all 708 installed packages by reading each installed
 `package.json` (not only registry metadata). Three packages needed explicit
 verification; `scripts/dev/check-licenses.mjs` records these overrides with the
 same rationale:
@@ -37,7 +37,11 @@ same rationale:
 | `buffers@0.1.1` | omitted from published package.json | MIT/X11 | Upstream `node-buffers` package.json declares `MIT/X11` ([1](https://github.com/bitpay/node-buffers/blob/master/package.json)); Snyk reports MIT ([5](https://security.snyk.io/package/npm/buffers/0.1.1)). |
 | `truncate-utf8-bytes@1.0.2` | WTFPL | WTFPL | Declared in its package.json; permissive public-domain-equivalent licence allowing commercial use. |
 
-Result: **PASS — 722/722 packages report an allow-listed licence.**
+Result: **PASS — 708/708 packages report an allow-listed licence.**
 All three are transitive dependencies of PDFKit/ExcelJS; none is shipped separately.
+Upgrading `better-sqlite3` from 12.4.1 to 13.0.3 removed 16 legacy build-time packages
+(including `prebuild-install`) and added `node-addon-api@8.9.2` (MIT). Version 13 ships a
+single N-API prebuild per platform, so the Electron installer no longer needs an
+Electron-ABI source rebuild.
 The bundled Noto Sans Bengali font is unmodified and redistributed with
 `assets/fonts/OFL.txt`.
