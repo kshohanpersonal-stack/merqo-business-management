@@ -1,7 +1,7 @@
 # Development Progress
 
 Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
-Base commit: `3a42431 Initial commit` · Integrated milestone commit: `c0c620d` · Repository visibility: **public** (confirmed with `gh api`).
+Base commit: `3a42431 Initial commit` · Integrated milestone commits: `c0c620d`, `e571a71` (both pushed to the active branch) · Repository visibility: **public** (confirmed with `gh api`).
 
 ## Current phase
 

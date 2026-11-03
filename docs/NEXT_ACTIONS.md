@@ -6,7 +6,7 @@ Last updated: 2026-11-03
 
 **Owner action required: provision the production signing material and run the Windows
 pipeline.** The integrated Phase 3–8 implementation is committed as `c0c620d` and pushed to
-`arena/e53fcc9d-merqo-business-management`; the evidence refresh commit follows. The
+`arena/e53fcc9d-merqo-business-management`; the evidence refresh commit `e571a71` is also pushed. The
 checklist now reports 49 PASSED / 39 BLOCKED after the milestone commit.
 
 1. Replace `src/core/public-key.ts` with the owner's production Ed25519 public key
