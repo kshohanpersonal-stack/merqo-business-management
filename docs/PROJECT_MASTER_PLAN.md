@@ -67,7 +67,9 @@ check and audit record for sensitive actions. 6. Validation and useful Bangla er
 ## 6. Environment reality (must be respected)
 
 * Sandbox: Linux x64, Node 22, npm, gcc/g++/make, Python 3.11. No Wine, no Xvfb, no
-  Windows host, no physical thermal printer or barcode scanner, no code-signing cert.
+  Windows host, no physical thermal printer or barcode scanner. The owner declined an
+  OV/EV certificate; unsigned distribution is accepted. Headless Chromium is available
+  from the npm registry for renderer visual QA.
 * GitHub access verified: authenticated as `kshohanpersonal-stack`; remote
   `https://github.com/kshohanpersonal-stack/merqo-business-management.git`; working
   branch `arena/e53fcc9d-merqo-business-management`.

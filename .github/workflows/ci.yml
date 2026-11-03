@@ -18,18 +18,24 @@ jobs:
         run: |
           python3 scripts/dev/generate_requirements.py
           git diff --exit-code -- docs/MASTER_REQUIREMENT_CHECKLIST.md docs/requirements.json
+      - run: npm run format:check
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
+      - run: npm run db:verify
+      - run: npm run qa:e2e
+      - run: npm run qa:visual
       - run: npm run build
       - run: npm run licenses
       - run: python3 scripts/dev/secret_scan.py
-      - name: Upload test evidence
+      - name: Upload test and QA evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ci-test-results
           path: |
             docs/test-results.json
+            docs/e2e-workflow.json
+            docs/visual-qa/
             coverage/
           if-no-files-found: warn

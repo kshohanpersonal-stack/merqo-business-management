@@ -22,6 +22,9 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | B-015 | 2026-11-03 | Windows `41645278572` (commit `efacbaf`) | `windows-latest` | 0.1.0 | **PASS** | Docs-only push re-verification: 41/41 tests (22.51 s), `npm ci --ignore-scripts`, explicit Electron install, NSIS installer, 152-file secret scan, generator SEA EXE, checksums, two artifacts |
 | B-016 | 2026-11-03 | CI `41645278808` (commit `efacbaf`) | `ubuntu-latest` | 0.1.0 | **PASS** | Full quality gate green after removing an accidentally tracked `.pyc`; 152 tracked files scanned |
 | B-017 | 2026-11-03 | Security `41645278586` (commit `efacbaf`) | `ubuntu-latest` | 0.1.0 | **PASS** | Secret scan, audit, 708-package licence allow-list, owner-only-artifact policy |
+| B-018 | 2026-11-03 | Windows `41646629301` (commit `f7d78d5`) | `windows-latest` | 0.1.0 | **PASS** | 41/41 tests, unsigned NSIS installer, owner-only generator EXE, checksums, protected artifacts; installer ZIP SHA-256 `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413` |
+| B-019 | 2026-11-03 | CI `41646629269` (commit `f7d78d5`) | `ubuntu-latest` | 0.1.0 | **PASS** | Full quality gate green; test evidence artifact |
+| B-020 | 2026-11-03 | Security `41646629348` (commit `f7d78d5`) | `ubuntu-latest` | 0.1.0 | **PASS** | Secret scan, non-blocking `npm audit` annotation, licence allow-list, owner-only-artifact policy |
 
 ### Windows CI artifacts from B-012 (not released)
 
@@ -37,17 +40,26 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,411 bytes | 13235565390 | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` (ZIP 131,637,535 bytes) |
 | `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13235615213 | `64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d` (ZIP 34,334,219 bytes, 7-day retention) |
 
-Both B-012 and B-015 outputs are unsigned and embed the development public key.
+B-012, B-015 and B-018 outputs are unsigned and embed the development public key.
 `SHA256SUMS.txt` and `SHA256SUMS-PRIVATE.txt` were generated and uploaded in B-012; the
 sandbox cannot download the artifact blobs, so the individual per-file hashes are not
 reproduced here. The owner-only artifact has 7-day retention and is never a public
-release asset. The installer is **unsigned for release purposes** (no owner OV/EV
-certificate) and embeds the development Ed25519 public key.
+release asset. The installer is **intentionally unsigned** by owner decision (no OV/EV certificate
+will be purchased) and embeds the development Ed25519 public key. Publisher is
+unverified; SmartScreen/Defender warnings vary. No security bypass is included.
+
+### Windows CI artifacts from B-018 / `f7d78d5` (not released)
+
+| Artifact | File | Artifact ID | Uploaded ZIP SHA-256 |
+| --- | --- | --- | --- |
+| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 13235581789 | `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413` (ZIP 131,637,527 bytes) |
+| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | 13235615213 | `b65f2bcfcf7bfb611bcaa25c927164bd61c497801ab2ccfd4bfe5869d8b37130` (ZIP 34,334,219 bytes, 7-day retention) |
 
 Development-only artefacts intentionally **not** shipped: `private/dev-license.merqolic`,
 `private/merqo-dev-ed25519-private.pem`, `private/generator-test.merqolic`,
 `private/generator-records.json`, `.merqo-data/`. All are ignored by `.gitignore`.
 
 Before any customer release the owner must replace `src/core/public-key.ts` with the
-production public key derived from the real owner-only private key, supply a code-signing
-certificate, and re-run the Windows pipeline to produce a trustworthy signed installer.
+production public key derived from the real owner-only private key, re-run the Windows
+pipeline, verify installation/hardware QA and disclose the unsigned/unverified-publisher
+status. No code-signing certificate is required by the owner's distribution decision.

@@ -52,4 +52,6 @@ publish. The licence generator and private key are never attached to that releas
 ## Unsigned distribution
 
 The owner explicitly declined an OV/EV certificate. Release notes must state that the
-build is unsigned and SmartScreen may warn. No security bypass instructions are allowed.
+build is unsigned, the publisher is unverified and SmartScreen/Defender warnings may
+vary by system. No security bypass instructions are allowed. Final CI/Security/Windows
+runs must correspond to the exact release commit.

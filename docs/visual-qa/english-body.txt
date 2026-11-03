@@ -1,0 +1,69 @@
+শুভ দুপুর। মঙ্গলবার, ৩ নভেম্বর, ২০২৬
+MERQO ভিজ্যুয়াল QA
+Offline · Local
+BN
+ভিজ্যুয়াল অ্যাডমিন
+Dashboard
+শুভ দুপুর। আজকের ব্যবসার সারাংশ নিচে দেখুন।
+Refresh
+মোট বিক্রয়
+৳0.00
+0 টি লেনদেন
+মোট ক্রয়
+৳0.00
+মোট মুনাফা
+৳0.00
+নিট মুনাফা
+৳0.00
+খরচ ও অন্যান্য আয় বাদ দিয়ে
+গ্রাহক বাকি
+৳0.00
+সরবরাহকারী বাকি
+৳0.00
+নগদ / ব্যাংক / MFS
+৳0.00
+নগদ ৳0.00 · ব্যাংক ৳0.00 · MFS ৳0.00
+কম স্টক / স্টকআউট
+0 / 0
+মোট 0 টি পণ্য
+Sales & profit trend
+Selected period
+এই সময়ে কোনো বিক্রয় নেই।
+Quick actions
+Start with one click
+New sale
+Add product
+New purchase
+Due collection
+View report
+Low-stock alerts
+No alerts.
+Best-selling products
+এখনো বিক্রয় তথ্য নেই।
+Recent activity
+settings.set
+ভিজ্যুয়াল অ্যাডমিন · settings
+2026-11-03 15:04
+settings.set
+ভিজ্যুয়াল অ্যাডমিন · settings
+2026-11-03 15:04
+bootstrap.setup
+system · bootstrap
+2026-11-03 15:04
+bootstrap.setup
+ভিজ্যুয়াল অ্যাডমিন · business
+2026-11-03 15:04
+license.activate
+system · license
+2026-11-03 15:04
+license.activate
+system · license
+2026-11-03 15:04
+সাম্প্রতিক বিক্রয়
+এখনো কোনো তথ্য নেই।
+সাম্প্রতিক ক্রয়
+এখনো কোনো তথ্য নেই।
+সাম্প্রতিক পেমেন্ট
+এখনো কোনো তথ্য নেই।
+
+ সব সংখ্যা সরাসরি স্থানীয় ডাটাবেজ থেকে গণনা করা হয়েছে।

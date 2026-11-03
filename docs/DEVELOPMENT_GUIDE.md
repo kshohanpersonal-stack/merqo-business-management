@@ -19,8 +19,8 @@ same `dispatch()` with the same `createContext()`. Never put SQL in the renderer
 | `npm run build` | renderer + Electron bundles |
 | `npm run build:generator` | owner-only generator SEA blob/CLI check |
 | `npm run smoke` | 12/12 preview API smoke checks |
-| `npm run qa:visual` | headless-Chromium renderer visual QA (see below) |
-| `npm run qa:e2e` | full 18-step dispatcher workflow (see below) |
+| `npm run qa:visual` | headless-Chromium renderer visual QA (18 pages, four viewports) |
+| `npm run qa:e2e` | 18-step real-dispatcher owner workflow |
 | `npm run checklist` | regenerate 247-item requirement evidence |
 
 ## Windows notes
@@ -40,14 +40,31 @@ Use `npm ci --ignore-scripts` then `node node_modules/electron/install.js`. Plai
    and refresh state docs.
 7. Commit logically; push only to the session branch; verify CI.
 
-## Visual QA
+## Visual and E2E QA
 
 `scripts/dev/visual-qa.mjs` uses `playwright-core` and the npm-bundled headless Chromium
-from `@sparticuz/chromium` (no external browser download). It starts from the live preview
-and checks four desktop viewports, Bangla glyphs, focus visibility, keyboard tab order,
-overflow and dead controls. Screenshots are written to `docs/visual-qa/` as evidence.
+from `@sparticuz/chromium` (no external browser download). It starts an isolated preview,
+activates and sets up through the real UI, then checks four desktop viewports, Bangla
+glyphs, focus visibility, accessible control names, overflow, console errors and the
+Bangla/English switch. `scripts/dev/ensure-dev-license.mjs` supplies an ignored
+development licence (or an ephemeral keypair in clean CI). Evidence is written to
+`docs/visual-qa/report.json`, `english-body.txt`, `english-nav.txt` and six screenshots.
+
+`scripts/dev/e2e-workflow.mjs` drives the same `/api` dispatcher against a temporary
+SQLite database through 18 owner workflow steps and writes `docs/e2e-workflow.json`.
+Both scripts are wired into `npm run qa:visual` / `qa:e2e` and Linux CI.
+
+## Localization
+
+`src/renderer/i18n.ts` is a boundary-aware Bangla→English dictionary layer with a
+`MutationObserver`, localStorage persistence and settings synchronization. It is
+initialized in `src/renderer/main.tsx`. English coverage is partial by design; unknown
+phrases remain Bangla rather than being partially translated into mixed-script text.
+Add full phrase entries to the dictionary rather than single-word substrings when
+extending coverage.
 
 ## Secrets
 
 `private/`, `*.pem`, `*.merqolic`, `.merqo-data/`, databases and backups are ignored.
-Never commit a private key, licence file or customer database.
+Never commit a private key, licence file or customer database. The customer app contains
+only the public verification key.

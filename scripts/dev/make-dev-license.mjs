@@ -21,5 +21,9 @@ writeFileSync('private/dev-license.merqolic', JSON.stringify(file, null, 2));
 const pub = createPublicKey(privateKey).export({ format: 'pem', type: 'spki' }).toString();
 console.log('Development licence written to private/dev-license.merqolic');
 console.log('Matching public key (must equal src/core/public-key.ts):');
-console.log(pub.trim() === readFileSync('src/core/public-key.ts','utf8').match(/= "([\s\S]*?)";/)[1].replace(/\\n/g,'\n').trim()
-  ? 'OK — public key matches' : 'WARNING — public key mismatch, regenerate src/core/public-key.ts');
+const source = readFileSync('src/core/public-key.ts', 'utf8');
+const match = source.match(/=\s*(['"])([\s\S]*?)\1\s*;/);
+const embedded = match ? match[2].replace(/\\n/g, '\n').trim() : '';
+console.log(pub.trim() === embedded
+  ? 'OK — public key matches'
+  : 'WARNING — public key mismatch, regenerate src/core/public-key.ts');

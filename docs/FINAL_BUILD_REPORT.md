@@ -1,63 +1,60 @@
-# Final Build Report — NOT COMPLETE
+# Final Build Report — NOT A PRODUCTION RELEASE
 
-Last updated: 2026-11-03 · source commit `3b11e3a` (plus this evidence refresh).
-**This is not a release report.** A Windows NSIS installer and owner-only generator EXE
-now exist as protected, unsigned CI artifacts from run `41642232644`, but there is still no
-installation/activation test, no trusted code-signed binary, no production public key, no
-version tag, no GitHub Release and no final signed build report. The strict completion gate
-is **BLOCKED**.
+Last updated: 2026-11-03 · Phase A checkpoint `7cd19bb`; final delivery commit and CI run IDs are recorded in the final delivery answer.
+This is an evidence report, not a released-product claim. Windows NSIS installer and
+owner-only generator EXEs exist as protected, **unsigned**, development-key CI artifacts
+from historical runs. There is no installation/activation test, no production public key,
+no version tag, no GitHub Release and no published production build. The strict
+completion gate remains **BLOCKED** for external/hardware and production-key items.
 
-## What has been built and verified
+## What has been built and verified locally on the current worktree
 
 | Item | Result | Evidence |
 | --- | --- | --- |
-| Renderer bundle | PASS | `docs/BUILD_HISTORY.md` B-001 |
-| Electron main + preload bundles | PASS | B-002 |
-| Owner-only generator SEA blob + CLI | PASS | B-004 |
-| Full Vitest suite (local) | 41/41 PASS, ≈22 s | `docs/TESTING_STATUS.md` |
-| Full Vitest suite (Windows CI) | 41/41 PASS, 23.84 s | run `41642232644` |
-| Database verification | 30/30 PASS | `scripts/database/verify.mjs` |
-| Live preview API end-to-end | 12/12 PASS | `npm run smoke` |
-| Typecheck / lint / format / 708 licences / 152-file secret scan | PASS | `docs/TESTING_STATUS.md` |
-| Linux CI / Security checks / Windows build workflows | PASS | runs `41642232635` / `41642232646` / `41642232644` |
-| Windows NSIS installer (build only) | PASS | `MERQO-Setup-0.1.0-x64.exe`, artifact 13232244667 |
-| Owner-only generator EXE (build only) | PASS | artifact 13232224614, 7-day retention |
-| SHA-256 checksum files | PASS | `SHA256SUMS.txt`, `SHA256SUMS-PRIVATE.txt` uploaded in B-012 |
-| Windows installation / activation / shortcuts / uninstall | **BLOCKED** | KI-001 |
-| Trusted code signing / SmartScreen clearance | **BLOCKED** | KI-002 |
-| Version tag / GitHub Release / release notes | **BLOCKED** | KI-016 |
+| Renderer + Electron main/preload bundles | PASS | `npm run build` |
+| Owner-only generator SEA blob + CLI | PASS | `npm run build:generator` (17,756-byte blob) |
+| Full Vitest suite (local) | 41/41 PASS, 24.10 s | `docs/test-results.json` |
+| Database verification | 30/30 PASS | `npm run db:verify` |
+| Typecheck / lint / format | PASS | local commands |
+| Third-party licences | 723 packages allow-listed, PASS | `npm run licenses` |
+| Tracked-file secret scan | PASS | `npm run secrets` |
+| Preview API smoke | 12/12 PASS | `npm run smoke` |
+| 18-step owner E2E workflow | 18/18 PASS | `docs/e2e-workflow.json` |
+| Headless Chromium visual QA | 18 pages / 4 viewports / 6 screenshots; 18/18 English nav probes; Bangla restored; no overflow, unnamed controls, focus, font or console errors | `docs/visual-qa/report.json`, `docs/visual-qa/*.png` |
+| Offline Ed25519 activation, tamper/device checks | PASS in unit/integration/E2E | `tests/unit/licensing.test.ts`, `tests/integration/activation.test.ts`, `docs/e2e-workflow.json` |
+| Backup create/verify/restore/restart persistence | PASS | `tests/integration/backup.test.ts`, `docs/e2e-workflow.json` |
+| Financial reconciliation and audit trail after restore/restart | PASS (10 checks, audit rows present) | `docs/e2e-workflow.json` |
 
-## Windows CI artifacts from run 41642232644 / source commit 3b11e3a (not released)
+## Historical Windows CI artifacts (not released)
 
-| Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
-| --- | --- | --- | --- | --- |
-| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,408 bytes | 13232244667 | `b6b839c20657ed46c8f44ec29c3de4a94d64de6528d40208e9f1a2be95d64323` (ZIP 131,637,527 bytes) |
-| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13232224614 | `9cd526803fa2f398e567f0bc4c102aabed46655046eec08d128cccb3a16c2a80` (ZIP 34,334,219 bytes) |
+| Run / commit | Artifact | Uploaded ZIP SHA-256 | Notes |
+| --- | --- | --- | --- |
+| `41646629301` / `f7d78d5` | `MERQO-Windows-Installer` (artifact `13235581789`) | `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413` (ZIP 131,637,527 bytes) | unsigned NSIS installer, development public key |
+| `41646629301` / `f7d78d5` | `MERQO-OWNER-ONLY-License-Generator` (artifact `13235615213`) | `b65f2bcfcf7bfb611bcaa25c927164bd61c497801ab2ccfd4bfe5869d8b37130` (ZIP 34,334,219 bytes) | protected 7-day artifact; never a public release asset |
+| `41645278572` / `efacbaf` | installer artifact `13235565390` | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` | earlier unsigned technical build |
+| `41642232644` / `3b11e3a` | installer artifact `13232244667` | `b6b839c20657ed46c8f44ec29c3de4a94d64de6528d40208e9f1a2be95d64323` | earlier unsigned technical build |
 
-## Re-verification artifacts from run 41645278572 / docs-refresh efacbaf (not released)
+Per-file `SHA256SUMS.txt` / `SHA256SUMS-PRIVATE.txt` were generated in CI but the
+sandbox cannot download artifact blobs; the values above are uploaded ZIP checksums
+from successful run logs/artifact metadata, not invented per-file installer hashes.
 
-| Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
-| --- | --- | --- | --- | --- |
-| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,411 bytes | 13235565390 | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` (ZIP 131,637,535 bytes) |
-| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13235615213 | `64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d` (ZIP 34,334,219 bytes) |
+## Unsigned distribution policy
 
-The sandbox cannot download artifact blobs, so the individual per-file hashes generated in
-`SHA256SUMS.txt` are not reproduced here. Both builds embed the **development** Ed25519
-public key and are unsigned for release purposes.
+The owner explicitly decided **not** to purchase an OV/EV code-signing certificate.
+Builds are intentionally unsigned with an unverified publisher. Windows SmartScreen /
+Defender warnings vary by file reputation, distribution method and system policy; no
+claim of SmartScreen clearance or Microsoft-verified publisher is made. The app does
+not disable Defender, SmartScreen or antivirus, and no bypass script is included.
 
-## Required before this file can become a real final build report
+## Remaining gates before any public production release
 
-1. Owner supplies a production Ed25519 keypair (replace `src/core/public-key.ts`) and a
-   Windows code-signing certificate in CI secrets (KI-002/KI-011).
-2. Re-run the Windows pipeline so the NSIS installer and generator EXE are built with the
-   production key and a trusted signature; record real per-file SHA-256 values.
-3. Installation, shortcuts, icon, uninstaller, first-run activation, business setup, POS,
-   returns, backup/restore, Bangla exports and thermal printing are tested on real Windows
-   hardware; results recorded in `docs/TEST_CASES.md`.
-4. A version tag creates the GitHub Release with **authorised public assets only** — main
-   installer, checksums and notes. The generator EXE and private key must remain private.
-5. `docs/MASTER_REQUIREMENT_CHECKLIST.md` has no mandatory `BLOCKED`/`FAILED`/`NOT TESTED`
-   item, and `docs/TESTING_STATUS.md`, `docs/KNOWN_ISSUES.md`, `docs/BUILD_HISTORY.md` and
-   this file are refreshed with real artefact sizes, hashes and results.
+| Area | Status | Reason |
+| --- | --- | --- |
+| Windows NSIS install, shortcuts, first-launch activation, uninstall, upgrade | **BLOCKED** | no Windows host / real installation executed |
+| Physical 58/80 mm printer, scanner, hardware-change transfer | **BLOCKED** | no hardware attached |
+| Production Ed25519 public key | **BLOCKED** | owner has not supplied it; development key embedded |
+| Electron-window-specific visual QA | **NOT TESTED** | renderer QA is headless Chromium on Linux |
+| Tag-triggered `release.yml`, versioned GitHub Release | **BLOCKED** | owner authorisation and readiness gates not met |
+| Final CI/Security/Windows runs on the exact final commit | **TESTING** | re-run on final pushed commit; conclusions and run IDs verified in final delivery answer |
 
-Until then, MERQO must not be described as a released or production-ready Windows product.
+A successful CI build is not a production release. No tag or Release has been created.

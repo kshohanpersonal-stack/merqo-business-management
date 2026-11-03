@@ -63,8 +63,9 @@ records, private keys, or raw SQL parameters. Logs stay local and are rotated (m
 
 ## 7. Known security limitations
 
-* No code-signing certificate in this environment → unsigned Windows builds and
-  SmartScreen warnings; a public final release is blocked until MERQO supplies one.
+* Owner declined an OV/EV certificate → intentionally unsigned Windows builds with an
+  unverified publisher. SmartScreen/Defender warnings vary; no bypass is included and no
+  trusted-publisher claim is made. This is accepted policy, not a security control.
 * Offline licensing cannot detect a patched binary; documented, not overclaimed.
 * Local encryption at rest for the main database is not implemented (SQLite is
   protected by Windows account ACLs); encrypted **backups** are supported. Full DB

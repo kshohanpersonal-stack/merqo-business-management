@@ -42,13 +42,13 @@ jobs:
         shell: pwsh
         run: |
           $notes = @"
-          ## MERQO $TAG — technical release candidate
+          ## MERQO $TAG — unsigned technical release candidate
 
           - Windows x64 NSIS installer. Activation is a dedicated first-run component of the main app.
           - The owner-only licence generator is NOT included; it is delivered privately.
           - Build: $env:GITHUB_RUN_ID / $env:GITHUB_SHA
           - See docs/TESTING_STATUS.md, docs/KNOWN_ISSUES.md and docs/release/BUILD_REPORT.md.
-          - Unsigned build: Windows SmartScreen will warn until a code-signing certificate is configured.
+          - Unsigned build: publisher is unverified; Windows SmartScreen/Defender warnings vary by system and cannot be guaranteed absent. Do not disable security controls.
           - This draft is not a final production release until installation and activation are verified.
           "@
           Set-Content -Path release-notes.md -Value $notes -Encoding utf8

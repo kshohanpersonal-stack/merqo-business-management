@@ -26,7 +26,7 @@ No dependency requires a paid API, subscription, online activation or recurring 
 
 ## Verified transitive exceptions (2026-11-03)
 
-`npm run licenses` inspected all 708 installed packages by reading each installed
+`npm run licenses` inspected all 723 installed packages by reading each installed
 `package.json` (not only registry metadata). Three packages needed explicit
 verification; `scripts/dev/check-licenses.mjs` records these overrides with the
 same rationale:

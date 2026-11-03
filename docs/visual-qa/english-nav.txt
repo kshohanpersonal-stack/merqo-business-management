@@ -1,0 +1,20 @@
+[
+  "Dashboard",
+  "New Sale (POS)",
+  "Products",
+  "Categories & brands",
+  "Inventory",
+  "Purchases",
+  "Sales / Returns",
+  "Customers & Dues",
+  "Supplier",
+  "Expenses",
+  "Cash & Accounts",
+  "Reports & Export",
+  "Backup & Restore",
+  "Users & RBAC",
+  "Audit log",
+  "Notifications",
+  "Settings",
+  "About"
+]

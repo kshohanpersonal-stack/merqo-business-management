@@ -10,13 +10,18 @@ function coreApiPlugin(): Plugin {
       server.middlewares.use('/api', async (req, res, next) => {
         try {
           const mod = await server.ssrLoadModule('/src/server/api.ts');
-          const handled = await mod.handleApi(req, res, server);
+          const handled = await mod.handleApi(req, res);
           if (!handled) next();
         } catch (err) {
-                console.error('[api]', err);
+          console.error('[api]', err);
           res.statusCode = 500;
           res.setHeader('content-type', 'application/json; charset=utf-8');
-          res.end(JSON.stringify({ ok: false, error: { code: 'INTERNAL', message: 'অনুরোধটি প্রক্রিয়া করা যায়নি।' } }));
+          res.end(
+            JSON.stringify({
+              ok: false,
+              error: { code: 'INTERNAL', message: 'অনুরোধটি প্রক্রিয়া করা যায়নি।' },
+            }),
+          );
         }
       });
     },

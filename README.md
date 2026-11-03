@@ -10,10 +10,12 @@ Founder: Shohan Khan · merqoonline@gmail.com.
 > [`docs/MASTER_REQUIREMENT_CHECKLIST.md`](docs/MASTER_REQUIREMENT_CHECKLIST.md),
 > [`docs/TESTING_STATUS.md`](docs/TESTING_STATUS.md) and
 > [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md) for the exact, evidence-based state.
-> Latest pushed source commit: `3b11e3a` (plus evidence-refresh commits). CI, Security and
-> Windows build workflows are green; the Windows installer and owner-only generator EXE
-> exist as protected, unsigned CI artifacts with development-key activation. No version
-> tag or GitHub Release exists. Nothing in this README claims production readiness.
+> Phase A checkpoint: `7cd19bb`; delivery work since then adds a bilingual renderer,
+> headless-Chromium visual QA and an 18-step E2E workflow. Historical CI, Security and
+> Windows workflows are green on `f7d78d5`, but the final delivery commit must be
+> re-verified. The unsigned installer and owner-only generator exist as protected CI
+> artifacts with development-key activation. No version tag or GitHub Release exists.
+> Nothing in this README claims production readiness.
 
 ## What is implemented
 
@@ -29,7 +31,9 @@ products/categories/brands/units, barcode and QR, purchases and supplier ledger,
 with split payments/holds/returns, customer ledger and due collection, expenses, cash and
 financial accounts, inventory movements, returns and adjustments, dashboard analytics,
 28 report families, CSV/XLSX/PDF export, thermal receipts, encrypted backups and restore,
-offline Ed25519 licence verification, and the owner-only licence generator.
+offline Ed25519 licence verification, the owner-only licence generator, a partial
+Bangla/English renderer language layer, headless-Chromium visual QA and an 18-step
+real-dispatcher E2E workflow.
 
 ## Repository layout
 
@@ -75,38 +79,38 @@ Additional verified commands:
 npm run db:verify       # 30/30 schema, FK, ACID and index checks
 npm run lint            # 0 errors / 0 warnings
 npm run format:check    # Prettier clean
-npm run licenses        # 708 packages allow-listed for commercial redistribution
+npm run licenses        # 723 packages allow-listed for commercial redistribution
 npm run build:generator # owner-only generator SEA blob + CLI smoke test
 npm run smoke           # 12/12 live activation → sale → backup checks (needs npm run dev)
+npm run qa:visual       # 18 pages / 4 viewports / 6 screenshots in headless Chromium
+npm run qa:e2e          # 18/18 real-dispatcher owner workflow checks
 npm run checklist       # regenerate the 247-requirement master checklist
 ```
 
-## CI status (source commit `3b11e3a`, re-verified after docs refresh `efacbaf`)
+## CI status (historical green runs; final commit re-verification in delivery answer)
 
-| Workflow | Run (`3b11e3a`) | Result | Re-verification (`efacbaf`) |
+| Workflow | `3b11e3a` | `efacbaf` | `f7d78d5` |
 | --- | --- | --- | --- |
-| CI — quality, tests and Linux build | `41642232635` | SUCCESS | `41645278808` SUCCESS |
-| Security checks | `41642232646` | SUCCESS | `41645278586` SUCCESS |
-| Windows build — installer and owner-only generator | `41642232644` | SUCCESS | `41645278572` SUCCESS |
+| CI — quality, tests and Linux build | `41642232635` SUCCESS | `41645278808` SUCCESS | `41646629269` SUCCESS |
+| Security checks | `41642232646` SUCCESS | `41645278586` SUCCESS | `41646629348` SUCCESS |
+| Windows build | `41642232644` SUCCESS | `41645278572` SUCCESS | `41646629301` SUCCESS |
 
-The `3b11e3a` Windows run produced `MERQO-Setup-0.1.0-x64.exe` (131,626,408 bytes,
-artifact `13232244667`) and `MERQO-License-Generator.exe` (protected artifact
-`13232224614`, 7-day retention). The `efacbaf` docs-only push re-ran all three workflows
-and rebuilt the same outputs: installer `MERQO-Setup-0.1.0-x64.exe` (131,626,411 bytes,
-artifact `13235565390`, ZIP SHA-256
-`a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b`) and owner-only
-`MERQO-License-Generator.exe` (artifact `13235615213`, ZIP SHA-256
-`64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d`, 7-day retention).
-Both builds include `SHA256SUMS.txt` / `SHA256SUMS-PRIVATE.txt`. All of these are
+The `f7d78d5` Windows run produced an unsigned NSIS installer (artifact `13235581789`,
+ZIP SHA-256 `a0e868675dbc50a9a5244db9d9646f24d3820394e1df649988a4a4e605393413`) and the
+owner-only generator (protected artifact `13235615213`, ZIP SHA-256
+`b65f2bcfcf7bfb611bcaa25c927164bd61c497801ab2ccfd4bfe5869d8b37130`, 7-day retention).
+Earlier `3b11e3a` / `efacbaf` artifacts are recorded in `docs/BUILD_HISTORY.md`. All are
 technical build outputs: **unsigned**, embedding the development public key, and
-**not released**.
+**not released**. The owner explicitly declined an OV/EV certificate; no Defender or
+SmartScreen bypass is included and no trusted-publisher claim is made.
 
-Actual executed local results: `npm test` 41/41, typecheck/lint/format/licences clean,
-renderer + Electron bundles built, 30/30 database checks, 12/12 preview API smoke checks.
-Windows installation/activation testing, hardware QA, trusted code signing, version tag and
-GitHub Release are **BLOCKED** — see `docs/TESTING_STATUS.md`, `docs/BUILD_HISTORY.md` and
-`docs/FINAL_BUILD_REPORT.md`. Customer data used during development lives only in an ignored
-local SQLite directory and is never committed.
+Actual executed local results on the current worktree: `npm test` 41/41 (24.10 s),
+typecheck/lint/format/licences clean, renderer + Electron bundles built, 30/30 database
+checks, 12/12 preview API smoke checks, 18/18 E2E workflow checks and headless-Chromium
+visual QA at four viewports. Final CI/Security/Windows runs are re-run on the exact delivery commit and their
+conclusions verified before the delivery answer. Windows installation/activation testing, hardware QA, production key,
+version tag and GitHub Release remain **BLOCKED** — see `docs/TESTING_STATUS.md`,
+`docs/BUILD_HISTORY.md` and `docs/FINAL_BUILD_REPORT.md`.
 
 ## Licensing and distribution
 

@@ -23,6 +23,7 @@ import {
   ChevronDown,
   ScrollText,
   AlertCircle,
+  Globe,
 } from 'lucide-react';
 import logo from '../../assets/icons/merqo.png';
 import { call, getToken, clearToken } from './api';
@@ -38,6 +39,7 @@ import {
   Loading,
   dateBn,
 } from './components';
+import { getLanguage, setLanguage, syncLanguageFromSettings, type Language } from './i18n';
 import { Activation, Login, Setup } from './pages/Auth';
 import { Dashboard } from './pages/Dashboard';
 import { Pos } from './pages/Pos';
@@ -130,6 +132,7 @@ function Shell({ status, actor, onLogout }: { status: any; actor: any; onLogout:
   const [passwordOpen, setPasswordOpen] = useState(false);
   const [pw, setPw] = useState({ oldPassword: '', newPassword: '', confirm: '' });
   const [shortcutMap, setShortcutMap] = useState<Record<string, string>>({});
+  const [lang, setLang] = useState<Language>(getLanguage());
   const navigate = useCallback((key: string) => {
     setPage(key);
     setBellOpen(false);
@@ -140,6 +143,7 @@ function Shell({ status, actor, onLogout }: { status: any; actor: any; onLogout:
     void call<any>('shortcuts.map')
       .then(setShortcutMap)
       .catch(() => {});
+    void syncLanguageFromSettings();
   }, []);
   const loadNotifications = useCallback(() => {
     void call<any>('notification.list', { pageSize: 20 })
@@ -246,6 +250,17 @@ function Shell({ status, actor, onLogout }: { status: any; actor: any; onLogout:
           ) : (
             <Badge tone="success">অফলাইন · স্থানীয়</Badge>
           )}
+          <button
+            className="btn"
+            title={lang === 'bn' ? 'Switch to English' : 'বাংলায় ফিরুন'}
+            onClick={() => {
+              const next: Language = lang === 'bn' ? 'en' : 'bn';
+              setLang(next);
+              void setLanguage(next);
+            }}
+          >
+            <Globe size={15} /> {lang === 'bn' ? 'EN' : 'BN'}
+          </button>
           <div style={{ position: 'relative' }}>
             <button
               className="icon-btn"

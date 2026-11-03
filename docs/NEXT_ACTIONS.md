@@ -2,47 +2,32 @@
 
 Last updated: 2026-11-03
 
-## Exact next development task
+## Final verification sequence (performed before delivery)
 
-**Owner action required: provision production signing material, then create the release.**
-The integrated Phase 3–8 implementation is committed and pushed through `3b11e3a`
-(source) and `efacbaf` (evidence refresh) on
-`arena/e53fcc9d-merqo-business-management`. All three push-triggered workflows are green
-on the source commit (CI `41642232635`, Security `41642232646`, Windows `41642232644`) and
-were re-verified after the docs-only push (CI `41645278808`, Security `41645278586`,
-Windows `41645278572`). The Windows builds produced `MERQO-Setup-0.1.0-x64.exe` and
-`MERQO-License-Generator.exe` as protected, unsigned, development-key artifacts with
-SHA-256 checksum files (latest IDs `13235565390` / `13235615213`). The checklist now reports
-17 IMPLEMENTED / 153 TESTING / 49 PASSED / 0 FAILED / 28 BLOCKED.
+**Commit, push and verify the final delivery commit.** The Phase A checkpoint is `7cd19bb`;
+the bilingual renderer, headless-Chromium visual QA, 18-step E2E workflow, CI additions,
+unsigned-policy corrections and refreshed progress documents are implemented and locally
+verified. Historical green workflows on `f7d78d5` are CI `41646629269`, Security
+`41646629348`, Windows `41646629301`; they do **not** correspond to the final delivery
+commit. Final delivery commit workflows are re-run and their run IDs recorded in the
+delivery answer.
 
-1. Replace `src/core/public-key.ts` with the owner's production Ed25519 public key
-   (matching an owner-only private key that is never committed) and provision a Windows
-   code-signing certificate in GitHub Actions secrets (KI-002/KI-011). Re-run the Windows
-   workflow so the installer is rebuilt with the production key and a trusted signature.
-2. Push a semantic version tag (e.g. `v0.1.0`) to trigger
-   `.github/workflows/release.yml` on `windows-latest`; inspect `gh run list`, verify the
-   draft Release contains **authorised public assets only** (installer, checksums, notes)
-   and that the generator EXE remains a private artifact (KI-016).
-3. On a real Windows machine: install the NSIS package, confirm desktop/Start Menu
-   shortcuts and custom icon, first-launch activation with a production licence, business
-   setup, first admin, POS → purchase → sale → return → backup → restore, Bangla
-   PDF/XLSX/CSV export, 58/80 mm thermal print, barcode scanner input, uninstaller, and
-   user-data survival outside the install directory.
-4. Run browser/Electron visual QA at 1280×720, 1366×768, 1440×900 and 1920×1080; record
-   every interactive control in `docs/TEST_CASES.md`.
-5. Produce `docs/FINAL_BUILD_REPORT.md` with real artefact sizes/SHA-256, release URL and
-   installation/activation results; then publish the versioned GitHub Release.
-6. After every Windows/CI/release result, re-run `python3 scripts/dev/update-checklist.py
-   --committed`, `python3 scripts/dev/generate_requirements.py`, refresh state docs and
-   commit/push again.
-
-## Recovery instructions for `CONTINUE`
-
-Read, in order: `git log -1`, `git status`, `docs/DEVELOPMENT_PROGRESS.md`,
-`docs/NEXT_ACTIONS.md`, `docs/MASTER_REQUIREMENT_CHECKLIST.md`, `docs/TESTING_STATUS.md`,
-`docs/BUILD_HISTORY.md`, `docs/KNOWN_ISSUES.md`, then `gh run list`. Do not rewrite working
-modules; resume at step 1 above. On Windows use `npm ci --ignore-scripts` followed by
-`node node_modules/electron/install.js`; do **not** run `electron-builder install-app-deps`
-because `better-sqlite3@13.0.3` uses N-API prebuilds. The live Vite preview already serves
-the first-run activation screen; use the **ডেভেলপমেন্ট লাইসেন্স** button in the preview (the
-licence is ignored local development material, not a customer licence).
+1. Stage all delivery files, run `npm run secrets` again so new tracked files are scanned,
+   commit logically and push only to `arena/e53fcc9d-merqo-business-management`.
+2. Re-run CI, Security and Windows workflows; confirm `gh run list` conclusions are
+   SUCCESS on the exact final commit. Do not rely on a watch process exit code alone.
+3. Record the final run IDs, artifact IDs, installer/generator ZIP SHA-256 values and
+   unsigned disclosure in `docs/FINAL_BUILD_REPORT.md` and the final delivery answer.
+4. Keep `src/core/public-key.ts` as the development key until the owner supplies a
+   production public key. Never commit the matching private key. Keep the owner-only
+   generator EXE out of public Releases.
+5. On a real Windows machine (owner/external task): install the unsigned NSIS package,
+   confirm shortcuts/icon, first-launch activation, business setup, POS → purchase →
+   sale → return → backup → restore, Bangla exports, 58/80 mm thermal print, barcode
+   scanner input, uninstaller and user-data survival. Do not disable Defender or
+   SmartScreen; warn that publisher is unverified and warnings vary.
+6. Do **not** create a version tag or public GitHub Release until the owner authorises
+   it and the remaining hardware/install/production-key gates are honestly disclosed.
+7. After every code or docs change, re-run `python3 scripts/dev/update-checklist.py
+   --committed`, `python3 scripts/dev/generate_requirements.py`, the local quality gates,
+   and the workflows; keep the working tree clean after completed commits.

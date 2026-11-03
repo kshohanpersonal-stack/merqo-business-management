@@ -30,6 +30,8 @@
     "postinstall": "node scripts/dev/copy-assets.mjs",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\" \"tests/**/*.ts\"",
     "smoke": "node scripts/dev/smoke-preview.mjs",
+    "qa:visual": "node scripts/dev/visual-qa.mjs",
+    "qa:e2e": "node scripts/dev/e2e-workflow.mjs",
     "checklist": "python3 scripts/dev/update-checklist.py --committed && python3 scripts/dev/generate_requirements.py"
   },
   "dependencies": {
@@ -48,6 +50,7 @@
     "@eslint/js": "9.36.0",
     "@expo-google-fonts/noto-sans-bengali": "0.4.4",
     "@fontsource/noto-sans-bengali": "5.3.0",
+    "@sparticuz/chromium": "153.0.0",
     "@types/better-sqlite3": "7.6.13",
     "@types/node": "22.18.6",
     "@types/pdfkit": "0.17.7",
@@ -60,6 +63,7 @@
     "esbuild": "0.25.10",
     "eslint": "9.36.0",
     "globals": "16.4.0",
+    "playwright-core": "1.64.1",
     "postject": "1.0.0-alpha.6",
     "prettier": "3.6.2",
     "tsx": "4.20.6",

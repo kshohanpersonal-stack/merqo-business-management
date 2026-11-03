@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { KeyRound, LogIn, Upload, Download, Loader2, ShieldCheck } from 'lucide-react';
 import logo from '../../../assets/icons/merqo.png';
 import { api, call, devLicense, setToken, isElectron } from '../api';
+import { setLanguage, type Language } from '../i18n';
 import { Button, Field, Input, TextArea, useToast } from '../components';
 
 export function AuthCard({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
@@ -191,6 +192,7 @@ export function Setup({ onDone }: { onDone: (actor: any) => void }) {
     password: '',
     confirm: '',
     currency: 'BDT',
+    language: 'bn',
   });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -222,6 +224,7 @@ export function Setup({ onDone }: { onDone: (actor: any) => void }) {
         username: form.username,
         password: form.password,
         settings: {
+          language: form.language,
           currency: {
             code: form.currency,
             symbol: form.currency === 'BDT' ? '৳' : '$',
@@ -231,6 +234,7 @@ export function Setup({ onDone }: { onDone: (actor: any) => void }) {
         },
       });
       setToken(out.token);
+      void setLanguage(form.language === 'en' ? 'en' : ('bn' as Language), false);
       onDone(out.actor);
     } catch (e) {
       setError((e as Error).message);
@@ -309,7 +313,14 @@ export function Setup({ onDone }: { onDone: (actor: any) => void }) {
             </select>
           </Field>
           <Field label="ভাষা">
-            <Input value="বাংলা (Bangla)" readOnly />
+            <select
+              className="select"
+              value={form.language}
+              onChange={(e) => set('language', e.target.value)}
+            >
+              <option value="bn">বাংলা (Bangla)</option>
+              <option value="en">English</option>
+            </select>
           </Field>
           <div className="full card card-pad small muted" style={{ lineHeight: 1.8 }}>
             সেটআপ শেষ হলে অ্যাপটি স্থানীয় ডাটাবেজ তৈরি করবে, প্রথম অ্যাডমিন অ্যাকাউন্ট সংরক্ষণ করবে এবং

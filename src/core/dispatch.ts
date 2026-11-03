@@ -1055,10 +1055,15 @@ export const ACTIONS: Record<string, ActionDef> = {
     }),
   },
   // ---------- development-only diagnostics ----------
+  // Kept for preview/test tooling only; the real UI uses `finance.reconcile`.
   'debug.reconcile': {
     permission: 'finance.view',
     transactional: false,
-    handler: ({ ctx }) => finance.reconcile(ctx.db),
+    handler: ({ ctx }) => {
+      if (process.env.NODE_ENV === 'production')
+        throw new AppError(ERR.FORBIDDEN, 'এই অপশন প্রোডাকশনে নিষ্ক্রিয়।');
+      return finance.reconcile(ctx.db);
+    },
   },
 };
 

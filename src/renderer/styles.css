@@ -990,3 +990,16 @@ table.data .num {
     width: 100%;
   }
 }
+
+/* Visible keyboard focus for every interactive control (accessibility gate). */
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.nav-item:focus-visible,
+.tab:focus-visible,
+.select:focus-visible,
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}

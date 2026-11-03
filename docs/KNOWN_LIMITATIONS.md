@@ -7,8 +7,9 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
 
 * MERQO is distributed as an **unsigned** Windows NSIS installer by explicit owner
   decision. No OV/EV code-signing certificate will be purchased. Windows SmartScreen may
-  show an "unverified publisher" warning. The application does not disable Defender,
-  SmartScreen or antivirus, and no security bypass is included.
+  show an "unverified publisher" warning; behaviour varies by reputation and policy. The
+  application does not disable Defender, SmartScreen or antivirus, and no security bypass
+  is included.
 * No trusted Authenticode signature and no Microsoft-verified publisher claim is made.
 * No version tag, public GitHub Release or release notes have been published. A successful
   CI build is not a production release.
@@ -26,12 +27,23 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
 ## Environment-dependent QA
 
 * No real Windows installation, first-launch activation, Start Menu/desktop shortcut,
-  uninstall or user-data-directory survival test has been executed.
+  uninstall, upgrade or user-data-directory survival test has been executed.
 * No physical 58/80 mm thermal printer or USB/Bluetooth barcode scanner test.
-* No Electron-window-specific visual QA; renderer visual QA is executed in headless
-  Chromium on Linux (see `docs/TESTING_STATUS.md`).
+* No Electron-window-specific visual QA. Renderer visual QA **has** been executed in
+  headless Chromium at four desktop sizes (18 pages, six screenshots); see
+  `docs/visual-qa/report.json` and `docs/TESTING_STATUS.md`.
 * Startup time, long-session memory, crash recovery under power loss and cross-PC backup
   migration remain NOT TESTED.
+* The 18-step owner workflow was executed against the real dispatcher and SQLite in
+  `npm run qa:e2e`; this is not a substitute for installation/hardware QA.
+
+## Localization
+
+* Bangla is the primary UI language. A dictionary-based English layer translates shell
+  navigation, settings, setup and common dashboard phrases; coverage is partial and
+  untranslated strings remain Bangla rather than mixed-script text. Visual QA verified
+  18/18 English navigation labels and Bangla restoration. It is not a complete
+  professional translation of every dynamic string.
 
 ## Product scope boundaries
 
@@ -44,5 +56,8 @@ build. It does not replace `docs/KNOWN_ISSUES.md`; it is the owner-facing limita
 
 ## Security
 
-* No private signing key, customer database, `.merqolic` file or `.pem` file is tracked.
-  `npm run secrets` and the Security workflow enforce this on every push.
+* RBAC, parameterized SQL, input validation, redacted logs/errors and offline Ed25519
+  verification are implemented and covered by unit/integration/security tests.
+* No production private key is embedded in the customer app or committed to the repo.
+* Owner-only generator and private keys must remain private; never publish them in
+  GitHub Releases.

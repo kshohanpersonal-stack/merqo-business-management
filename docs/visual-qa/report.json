@@ -1,0 +1,315 @@
+{
+  "generatedAt": "2026-11-03T15:04:09.699Z",
+  "base": "http://127.0.0.1:43173",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা",
+      "focus": {
+        "ok": true,
+        "tag": "BUTTON",
+        "outline": "solid",
+        "shadow": "rgb(230, 244, 241) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা",
+      "focus": {
+        "ok": true,
+        "tag": "BUTTON",
+        "outline": "solid",
+        "shadow": "rgb(230, 244, 241) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা",
+      "focus": {
+        "ok": true,
+        "tag": "BUTTON",
+        "outline": "solid",
+        "shadow": "rgb(230, 244, 241) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা",
+      "focus": {
+        "ok": true,
+        "tag": "BUTTON",
+        "outline": "solid",
+        "shadow": "rgb(230, 244, 241) 0px 0px 0px 3px"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "label": "ড্যাশবোর্ড",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "নতুন সেল (POS)",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 32,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "পণ্য",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 31,
+      "banglaTextNodes": 30,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ক্যাটাগরি ও ব্র্যান্ড",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 28,
+      "banglaTextNodes": 35,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ইনভেন্টরি",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 23,
+      "banglaTextNodes": 28,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ক্রয়",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 24,
+      "banglaTextNodes": 26,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "বিক্রয় / রিটার্ন",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 26,
+      "banglaTextNodes": 26,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "গ্রাহক ও বাকি",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 41,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "সরবরাহকারী",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 27,
+      "banglaTextNodes": 30,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "খরচ",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 27,
+      "banglaTextNodes": 28,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ক্যাশ ও অ্যাকাউন্ট",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 30,
+      "banglaTextNodes": 41,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "রিপোর্ট ও এক্সপোর্ট",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 59,
+      "banglaTextNodes": 56,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ব্যাকআপ ও রিস্টোর",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 28,
+      "banglaTextNodes": 33,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "ব্যবহারকারী ও RBAC",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 29,
+      "banglaTextNodes": 37,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "অডিট লগ",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 27,
+      "banglaTextNodes": 36,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "নোটিফিকেশন",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 25,
+      "banglaTextNodes": 28,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "সেটিংস",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 35,
+      "banglaTextNodes": 39,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    },
+    {
+      "label": "সম্পর্কে",
+      "horizontalOverflow": 0,
+      "overflowingContainers": 0,
+      "unnamedButtons": 0,
+      "focusableElements": 22,
+      "banglaTextNodes": 27,
+      "fontLoaded": true,
+      "title": "MERQO — ব্যবসা ব্যবস্থাপনা"
+    }
+  ],
+  "language": {
+    "htmlLang": "en",
+    "navLabels": [
+      "Dashboard",
+      "New Sale (POS)",
+      "Products",
+      "Categories & brands",
+      "Inventory",
+      "Purchases",
+      "Sales / Returns",
+      "Customers & Dues",
+      "Supplier",
+      "Expenses",
+      "Cash & Accounts",
+      "Reports & Export",
+      "Backup & Restore",
+      "Users & RBAC",
+      "Audit log",
+      "Notifications",
+      "Settings",
+      "About"
+    ],
+    "englishProbes": 18,
+    "englishHits": 18,
+    "navBengali": [],
+    "corruptionDetected": false,
+    "samples": [
+      "Dashboard",
+      "New Sale (POS)",
+      "Products",
+      "Categories & brands",
+      "Inventory",
+      "Purchases",
+      "Sales / Returns",
+      "Customers & Dues",
+      "Supplier",
+      "Expenses",
+      "Cash & Accounts",
+      "Reports & Export",
+      "Backup & Restore",
+      "Users & RBAC",
+      "Audit log",
+      "Notifications",
+      "Settings",
+      "About"
+    ],
+    "note": "Bangla remains the primary language; English coverage is dictionary-based and partial.",
+    "banglaRestored": true
+  },
+  "consoleErrors": [],
+  "screenshots": [
+    "/home/user/merqo-business-management/docs/visual-qa/dashboard-1280x720.png",
+    "/home/user/merqo-business-management/docs/visual-qa/dashboard-1366x768.png",
+    "/home/user/merqo-business-management/docs/visual-qa/dashboard-1440x900.png",
+    "/home/user/merqo-business-management/docs/visual-qa/dashboard-1920x1080.png",
+    "/home/user/merqo-business-management/docs/visual-qa/pos-1280x720.png",
+    "/home/user/merqo-business-management/docs/visual-qa/settings-english-1280x720.png"
+  ],
+  "errors": []
+}

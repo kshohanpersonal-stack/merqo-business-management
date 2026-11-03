@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-11-03T15:04:09.098Z",
+  "base": "http://127.0.0.1:45895",
+  "dataDir": "/tmp/merqo-e2e-1793718245994",
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "name": "01 first launch reports activation required",
+      "ok": true,
+      "detail": "needsActivation=true integrity=true"
+    },
+    {
+      "name": "02 Ed25519 offline activation",
+      "ok": true,
+      "detail": "MQ-844E06F57E40D819967F080E"
+    },
+    {
+      "name": "03 setup creates owner session and permissions",
+      "ok": true,
+      "detail": "permissions=30"
+    },
+    {
+      "name": "04 owner login / session resolves actor",
+      "ok": true,
+      "detail": "owner"
+    },
+    {
+      "name": "05 product created with SKU/barcode",
+      "ok": true,
+      "detail": "251724a1-7d1c-4784-a733-c7a70717d469"
+    },
+    {
+      "name": "06 customer created",
+      "ok": true,
+      "detail": "c50de235-ad73-4ef8-a421-99d269a9354d"
+    },
+    {
+      "name": "07 supplier created",
+      "ok": true,
+      "detail": "5531cc10-e908-4fea-95a4-19e0ae032071"
+    },
+    {
+      "name": "08 purchase increases stock and supplier payable",
+      "ok": true,
+      "detail": "total=70500 stock=50000→60000 payable=40500"
+    },
+    {
+      "name": "09 inventory summary reflects real stock",
+      "ok": true,
+      "detail": "{\"products\":1,\"in_stock\":1,\"out_of_stock\":0,\"low_stock\":0,\"stock_value_minor\":420480}"
+    },
+    {
+      "name": "10 POS checkout persists sale, due and rejects duplicate checkout",
+      "ok": true,
+      "detail": "invoice=INV-20261103-247396 total=20000 due=15000 duplicateRejected=true"
+    },
+    {
+      "name": "11 receipt HTML, 58mm ESC/POS and reprint generated",
+      "ok": true,
+      "detail": "html=60838 escPos=640 printed=1"
+    },
+    {
+      "name": "12 partial payment / due collection clears customer balance",
+      "ok": true,
+      "detail": "balance=0"
+    },
+    {
+      "name": "13 sales return restores stock and records refund",
+      "ok": true,
+      "detail": "refund=10000 stock=58000→59000"
+    },
+    {
+      "name": "14 expense created",
+      "ok": true,
+      "detail": "{\"id\":\"4158672f-edb4-411a-9993-e346a8c1f90b\"}"
+    },
+    {
+      "name": "15 28 reports, daily-sales rows, P&L and CSV export",
+      "ok": true,
+      "detail": "reports=28 rows=1 csv=daily-sales-2026-11-03.csv"
+    },
+    {
+      "name": "16 backup verified, restore recovers pre-mutation data",
+      "ok": true,
+      "detail": "backup=MERQO-Backup-2026-11-03T15-04-07-440Z-5cb02b.merqobak products=1"
+    },
+    {
+      "name": "17 restart preserves activation, session, products, sales and dashboard",
+      "ok": true,
+      "detail": "products=1 sales=1 todaySales=20000"
+    },
+    {
+      "name": "18 finance reconciliation and audit trail pass after restore/restart",
+      "ok": true,
+      "detail": "checks=10 audit=11"
+    }
+  ],
+  "errors": []
+}

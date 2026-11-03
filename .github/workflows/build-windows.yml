@@ -17,6 +17,7 @@ jobs:
       - run: node node_modules/electron/install.js
       - run: npm run typecheck
       - run: npm test
+      - run: npm run db:verify
       - run: npm run build
       - name: Verify N-API SQLite binary loads on Windows
         # better-sqlite3 13 ships N-API prebuilds, so no Electron ABI rebuild is needed.

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { setLanguage, type Language } from '../i18n';
 import {
   FileText,
   Download,
@@ -903,10 +904,15 @@ export function SettingsPage() {
     if (data?.business) setBusiness(data.business);
   }, [data]);
   const values = data?.values ?? {};
-  const set = (key: string, value: unknown, message = 'সেটিংস সংরক্ষিত হয়েছে।') =>
+  const set = (key: string, value: unknown, message = 'সেটিংস সংরক্ষিত হয়েছে।') => {
+    if (key === 'language') {
+      void setLanguage(value === 'en' ? 'en' : ('bn' as Language));
+      return;
+    }
     void run('settings.set', { key, value }, message)
       .then(reload)
       .catch(() => {});
+  };
   const patch = (key: string, extra: Record<string, unknown>) =>
     set(key, { ...(values[key] ?? {}), ...extra });
   return (

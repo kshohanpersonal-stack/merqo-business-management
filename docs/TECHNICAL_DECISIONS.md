@@ -141,9 +141,11 @@ ABI smoke test in CI. The same source runs in Node for tests and for the browser
   protected workflow artifact. The activation workflow is a dedicated first-run component
   inside the main app rather than a second EXE — fewer moving parts, no second runtime
   to sign, and identical verification code (documented decision, Part 18.1).
-* No code-signing certificate is available in this environment. Builds will be
-  **unsigned** and SmartScreen will warn; recorded as a release blocker until MERQO
-  supplies an EV/OV certificate via GitHub Actions secrets.
+* The owner explicitly decided **not** to purchase an OV/EV code-signing certificate.
+  Builds are intentionally **unsigned** with an unverified publisher. SmartScreen /
+  Defender warnings vary by reputation and policy; no bypass is included and no trusted
+  Authenticode or Microsoft-verified publisher claim is made. This is an accepted
+  distribution policy, not a release blocker.
 
 ## 9. Rejected shortcuts (explicit)
 
@@ -158,7 +160,7 @@ ABI smoke test in CI. The same source runs in Node for tests and for the browser
 
 ## 10. Open decisions requiring owner input
 
-1. Code-signing certificate provisioning (blocks a trustworthy public release).
+1. Production Ed25519 public key provisioning (owner-controlled; development key is embedded until then).
 2. Whether VAT reporting must follow a specific Bangladesh NBR format (currently generic).
 3. Approved device-transfer fee/policy and evidence requirements.
 4. Final product name/trademark check; `MERQO` remains the company identity.
@@ -188,11 +190,11 @@ All decisions above are now reflected in source, not just planned:
   platform that loads in both Node 22 and Electron 43, so `electron-builder` uses
   `npmRebuild: false` and the Windows workflow no longer performs an ABI rebuild.
 
-* CI evidence (commit `3b11e3a`): three push-triggered workflows are green — CI
-  `41642232635`, Security `41642232646`, Windows build `41642232644`. The Windows job
-  produced `MERQO-Setup-0.1.0-x64.exe` and `MERQO-License-Generator.exe` as protected
-  unsigned artifacts. Re-verified after the docs-only push `efacbaf` with CI
-  `41645278808`, Security `41645278586`, Windows build `41645278572` (job `125948863993`),
-  all green. `npm ci --ignore-scripts` plus an explicit Electron install replaces
-  the old ABI rebuild; `electron-builder.yml` sets `npmRebuild: false`. Installation,
-  activation, trusted signing and release remain outside this evidence and are BLOCKED.
+* Historical CI evidence: `3b11e3a` (`41642232635` / `41642232646` / `41642232644`),
+  `efacbaf` (`41645278808` / `41645278586` / `41645278572`) and `f7d78d5`
+  (`41646629269` / `41646629348` / `41646629301`) are green. The Windows jobs produced
+  unsigned NSIS installers and protected owner-only generator artifacts. Final delivery
+  commit workflows are re-run and their run IDs recorded in the delivery answer.
+  `npm ci --ignore-scripts` plus an explicit Electron
+  install replaces the old ABI rebuild; `electron-builder.yml` sets `npmRebuild: false`.
+  Installation, activation, hardware QA and release remain outside this evidence.

@@ -5,14 +5,14 @@
 | # | Layer | Location | Responsibility |
 | --- | --- | --- | --- |
 | 1 | Presentation | `src/renderer/` | React pages/components, design system, keyboard shortcuts, Bangla strings |
-| 2 | Application | `src/core/dispatch.ts`, `src/main/ipc.ts`, `src/server/api.ts` | Single action dispatcher, session/permission gate, error normalization |
-| 3 | Business logic | `src/core/{sales,purchases,inventory,finance,parties,expenses,returns,analytics}.ts` | Transactional workflows, invariants, financial policy |
-| 4 | Database | `src/core/db.ts`, `src/core/migrations.ts`, `database/` | SQLite connection, migrations, schema, indexes, integrity |
+| 2 | Application | `src/core/dispatch.ts`, `src/main/index.ts`, `src/preload/index.ts`, `src/server/api.ts` | Single action dispatcher, hardened IPC bridge, session/permission gate, error normalization |
+| 3 | Business logic | `src/core/{sales,purchases,inventory,finance,parties,expenses,analytics}.ts` | Transactional workflows, returns/refunds, invariants, financial policy |
+| 4 | Database | `src/core/db.ts`, `src/core/schema.generated.ts`, `database/migrations/001_initial.sql` | SQLite connection, embedded forward-only migration, schema, indexes, integrity |
 | 5 | Authentication | `src/core/auth.ts`, `src/core/sessions.ts` | scrypt hashing, sessions, account status |
 | 6 | Licensing | `src/core/licensing.ts`, `apps/license-generator/` | Ed25519 verification, device binding, activation |
 | 7 | Reporting | `src/core/reports.ts` | Report descriptor registry, filters, pagination, totals |
 | 8 | Printing | `src/core/printing.ts`, `src/main/printing.ts` | Receipt HTML, ESC/POS builder, printer queue |
-| 9 | Hardware | `src/core/barcode.ts`, `src/renderer/scanner.ts` | Keyboard-wedge scanner detection, barcode/QR generation |
+| 9 | Hardware | `src/core/barcode.ts`, `src/renderer/pages/Pos.tsx` | Keyboard-wedge scanner detection in POS, barcode/QR generation |
 | 10 | Backup/recovery | `src/core/backup.ts` | Online backup, manifest/checksum, optional encryption, safe restore |
 | 11 | Logging/monitoring | `src/core/audit.ts`, `src/core/logger.ts` | Audit trail, sanitized local logs |
 | 12 | Configuration | `src/core/settings.ts`, `src/core/config.ts` | Business profile, formats, payment methods, shortcuts, paths |
@@ -96,11 +96,11 @@ are part of payloads for all money-moving actions; unique indexes reject duplica
 
 | Metric | Target | Test |
 | --- | --- | --- |
-| Cold start to login | < 3 s on reference SSD | `tests/performance/startup.test.ts` |
-| POS add-to-cart | < 50 ms p95 | `tests/performance/pos.test.ts` |
-| 10k product search | < 200 ms p95 with index | `tests/performance/large-dataset.test.ts` |
-| Sale commit (10 items) | < 100 ms | integration benchmark |
-| Memory after 1h session | no unbounded growth | manual long-session checklist |
+| Cold start to login | < 3 s on reference SSD | NOT TESTED — no startup benchmark in this environment |
+| POS add-to-cart | < 50 ms p95 | NOT TESTED — no POS latency benchmark in this environment |
+| 10k product search | < 200 ms p95 with index | `tests/performance/large-dataset.test.ts` (p95 8.0 ms, dashboard 5.6 ms) |
+| Sale commit (10 items) | < 100 ms | NOT TESTED — no dedicated integration benchmark |
+| Memory after 1h session | no unbounded growth | NOT TESTED — manual long-session checklist |
 
 ## 7. Rejected architecture ideas
 
