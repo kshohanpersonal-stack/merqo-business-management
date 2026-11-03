@@ -5,11 +5,14 @@ Last updated: 2026-11-03
 ## Exact next development task
 
 **Owner action required: provision production signing material, then create the release.**
-The integrated Phase 3–8 implementation is committed and pushed through `3b11e3a` on
-`arena/e53fcc9d-merqo-business-management`. All three push-triggered workflows are green:
-CI `41642232635`, Security `41642232646`, Windows build `41642232644`. The Windows build
-produced `MERQO-Setup-0.1.0-x64.exe` and `MERQO-License-Generator.exe` as protected,
-unsigned, development-key artifacts with SHA-256 checksum files. The checklist now reports
+The integrated Phase 3–8 implementation is committed and pushed through `3b11e3a`
+(source) and `efacbaf` (evidence refresh) on
+`arena/e53fcc9d-merqo-business-management`. All three push-triggered workflows are green
+on the source commit (CI `41642232635`, Security `41642232646`, Windows `41642232644`) and
+were re-verified after the docs-only push (CI `41645278808`, Security `41645278586`,
+Windows `41645278572`). The Windows builds produced `MERQO-Setup-0.1.0-x64.exe` and
+`MERQO-License-Generator.exe` as protected, unsigned, development-key artifacts with
+SHA-256 checksum files (latest IDs `13235565390` / `13235615213`). The checklist now reports
 17 IMPLEMENTED / 153 TESTING / 49 PASSED / 0 FAILED / 28 BLOCKED.
 
 1. Replace `src/core/public-key.ts` with the owner's production Ed25519 public key

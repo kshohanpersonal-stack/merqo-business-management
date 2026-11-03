@@ -191,6 +191,8 @@ All decisions above are now reflected in source, not just planned:
 * CI evidence (commit `3b11e3a`): three push-triggered workflows are green — CI
   `41642232635`, Security `41642232646`, Windows build `41642232644`. The Windows job
   produced `MERQO-Setup-0.1.0-x64.exe` and `MERQO-License-Generator.exe` as protected
-  unsigned artifacts. `npm ci --ignore-scripts` plus an explicit Electron install replaces
+  unsigned artifacts. Re-verified after the docs-only push `efacbaf` with CI
+  `41645278808`, Security `41645278586`, Windows build `41645278572` (job `125948863993`),
+  all green. `npm ci --ignore-scripts` plus an explicit Electron install replaces
   the old ABI rebuild; `electron-builder.yml` sets `npmRebuild: false`. Installation,
   activation, trusted signing and release remain outside this evidence and are BLOCKED.

@@ -10,7 +10,7 @@ Founder: Shohan Khan · merqoonline@gmail.com.
 > [`docs/MASTER_REQUIREMENT_CHECKLIST.md`](docs/MASTER_REQUIREMENT_CHECKLIST.md),
 > [`docs/TESTING_STATUS.md`](docs/TESTING_STATUS.md) and
 > [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md) for the exact, evidence-based state.
-> Latest pushed source commit: `3b11e3a` (plus this evidence refresh). CI, Security and
+> Latest pushed source commit: `3b11e3a` (plus evidence-refresh commits). CI, Security and
 > Windows build workflows are green; the Windows installer and owner-only generator EXE
 > exist as protected, unsigned CI artifacts with development-key activation. No version
 > tag or GitHub Release exists. Nothing in this README claims production readiness.
@@ -81,18 +81,25 @@ npm run smoke           # 12/12 live activation → sale → backup checks (need
 npm run checklist       # regenerate the 247-requirement master checklist
 ```
 
-## CI status (commit `3b11e3a`)
+## CI status (source commit `3b11e3a`, re-verified after docs refresh `efacbaf`)
 
-| Workflow | Run | Result |
-| --- | --- | --- |
-| CI — quality, tests and Linux build | `41642232635` | SUCCESS |
-| Security checks | `41642232646` | SUCCESS |
-| Windows build — installer and owner-only generator | `41642232644` | SUCCESS |
+| Workflow | Run (`3b11e3a`) | Result | Re-verification (`efacbaf`) |
+| --- | --- | --- | --- |
+| CI — quality, tests and Linux build | `41642232635` | SUCCESS | `41645278808` SUCCESS |
+| Security checks | `41642232646` | SUCCESS | `41645278586` SUCCESS |
+| Windows build — installer and owner-only generator | `41642232644` | SUCCESS | `41645278572` SUCCESS |
 
-The Windows run produced `MERQO-Setup-0.1.0-x64.exe` (131,626,408 bytes, artifact
-`13232244667`) and `MERQO-License-Generator.exe` (protected artifact `13232224614`,
-7-day retention), plus `SHA256SUMS.txt` and `SHA256SUMS-PRIVATE.txt`. These are technical
-build outputs: **unsigned**, embedding the development public key, and **not released**.
+The `3b11e3a` Windows run produced `MERQO-Setup-0.1.0-x64.exe` (131,626,408 bytes,
+artifact `13232244667`) and `MERQO-License-Generator.exe` (protected artifact
+`13232224614`, 7-day retention). The `efacbaf` docs-only push re-ran all three workflows
+and rebuilt the same outputs: installer `MERQO-Setup-0.1.0-x64.exe` (131,626,411 bytes,
+artifact `13235565390`, ZIP SHA-256
+`a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b`) and owner-only
+`MERQO-License-Generator.exe` (artifact `13235615213`, ZIP SHA-256
+`64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d`, 7-day retention).
+Both builds include `SHA256SUMS.txt` / `SHA256SUMS-PRIVATE.txt`. All of these are
+technical build outputs: **unsigned**, embedding the development public key, and
+**not released**.
 
 Actual executed local results: `npm test` 41/41, typecheck/lint/format/licences clean,
 renderer + Electron bundles built, 30/30 database checks, 12/12 preview API smoke checks.

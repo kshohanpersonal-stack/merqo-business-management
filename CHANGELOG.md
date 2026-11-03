@@ -38,10 +38,13 @@ All notable changes are documented here. Semantic versioning; owner controls rel
   (708 packages), `npm run build`, `npm run build:generator`, `npm run secrets`
   (152 tracked files), `npm run smoke` 12/12.
 - GitHub Actions: CI `41642232635`, Security `41642232646`, Windows build `41642232644`
-  all SUCCESS on `3b11e3a`.
+  all SUCCESS on `3b11e3a`; re-verified after the docs-only push `efacbaf` with CI
+  `41645278808`, Security `41645278586`, Windows build `41645278572` all SUCCESS
+  (Windows job 4 m 39 s, 41/41 tests in 22.51 s, 152-file secret scan).
 - Windows CI produced `MERQO-Setup-0.1.0-x64.exe` (131,626,408 bytes, artifact
   `13232244667`), `MERQO-License-Generator.exe` (protected artifact `13232224614`), and
-  SHA-256 checksum files. Unsigned, development-key technical artifacts; not released.
+  SHA-256 checksum files. The `efacbaf` re-build produced the same unsigned,
+  development-key outputs as artifacts `13235565390` / `13235615213`; not released.
 
 ### Not included / blocked
 - Real Windows installation/activation/shortcut/uninstall testing, trusted code-signed

@@ -19,6 +19,9 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | B-012 | 2026-11-03 | Windows `41642232644` (commit `3b11e3a`) | `windows-latest` | 0.1.0 | **PASS** | `npm ci --ignore-scripts`, explicit `node node_modules/electron/install.js`, 41/41 tests (23.84 s), NSIS installer, generator SEA EXE, checksums, two protected artifacts |
 | B-013 | 2026-11-03 | CI `41642232635` (commit `3b11e3a`) | `ubuntu-latest` | 0.1.0 | **PASS** | Full quality gate green; test evidence artifact `ci-test-results` |
 | B-014 | 2026-11-03 | Security `41642232646` (commit `3b11e3a`) | `ubuntu-latest` | 0.1.0 | **PASS** | Secret scan, audit, 708-package licence allow-list, owner-only-artifact policy |
+| B-015 | 2026-11-03 | Windows `41645278572` (commit `efacbaf`) | `windows-latest` | 0.1.0 | **PASS** | Docs-only push re-verification: 41/41 tests (22.51 s), `npm ci --ignore-scripts`, explicit Electron install, NSIS installer, 152-file secret scan, generator SEA EXE, checksums, two artifacts |
+| B-016 | 2026-11-03 | CI `41645278808` (commit `efacbaf`) | `ubuntu-latest` | 0.1.0 | **PASS** | Full quality gate green after removing an accidentally tracked `.pyc`; 152 tracked files scanned |
+| B-017 | 2026-11-03 | Security `41645278586` (commit `efacbaf`) | `ubuntu-latest` | 0.1.0 | **PASS** | Secret scan, audit, 708-package licence allow-list, owner-only-artifact policy |
 
 ### Windows CI artifacts from B-012 (not released)
 
@@ -27,6 +30,14 @@ Local Linux builds, GitHub Actions failures and the final green CI runs are all 
 | `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,408 bytes | 13232244667 | `b6b839c20657ed46c8f44ec29c3de4a94d64de6528d40208e9f1a2be95d64323` (ZIP 131,637,527 bytes) |
 | `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13232224614 | `9cd526803fa2f398e567f0bc4c102aabed46655046eec08d128cccb3a16c2a80` (ZIP 34,334,219 bytes) |
 
+### Windows CI artifacts from B-015 (not released)
+
+| Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
+| --- | --- | --- | --- | --- |
+| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,411 bytes | 13235565390 | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` (ZIP 131,637,535 bytes) |
+| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13235615213 | `64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d` (ZIP 34,334,219 bytes, 7-day retention) |
+
+Both B-012 and B-015 outputs are unsigned and embed the development public key.
 `SHA256SUMS.txt` and `SHA256SUMS-PRIVATE.txt` were generated and uploaded in B-012; the
 sandbox cannot download the artifact blobs, so the individual per-file hashes are not
 reproduced here. The owner-only artifact has 7-day retention and is never a public

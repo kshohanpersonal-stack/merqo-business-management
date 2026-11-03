@@ -1,10 +1,11 @@
 # Development Progress
 
 Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
-Base commit: `3a42431 Initial commit` · Pushed commits: `c0c620d` (integrated source),
+Base commit: `3a42431 Initial commit` · Pushed commits include: `c0c620d` (integrated source),
 `e571a71` / `2e5747a` (evidence refresh), `4e5eb31`, `3234e8e`, `9ef4763`, `cda840e`,
-`3b11e3a` (CI/Windows build fixes). Repository visibility: **public** (`gh api`).
-Latest pushed source commit: `3b11e3a`; this evidence refresh is committed on top of it.
+`3b11e3a` (CI/Windows build fixes), `efacbaf` (evidence refresh). Repository visibility:
+**public** (`gh api`). Latest pushed source commit: `3b11e3a`; the evidence-refresh commits
+are recorded on top of it.
 
 ## Current phase
 
@@ -12,9 +13,10 @@ Latest pushed source commit: `3b11e3a`; this evidence refresh is committed on to
 Phases 1–7 are implemented; a full Bangla React UI, Electron main/preload, Windows device
 fingerprint and printing providers, a Vite `/api` bridge, the owner-only licence generator
 CLI and an end-to-end preview smoke test are in place. Three push-triggered GitHub Actions
-workflows are now green on `windows-latest` / `ubuntu-latest`, and the Windows build
-`41642232644` produced an NSIS installer plus the owner-only generator EXE as protected
-CI artifacts. Phases 9–11 (complete QA with UI and hardware, real Windows
+workflows are green on `windows-latest` / `ubuntu-latest`; the Windows build `41642232644`
+produced an NSIS installer plus the owner-only generator EXE as protected CI artifacts,
+and the docs-only push `efacbaf` re-verified all three workflows (`41645278808`,
+`41645278586`, `41645278572`) and re-built the same unsigned outputs. Phases 9–11 (complete QA with UI and hardware, real Windows
 installation/activation test, signed GitHub release) remain **BLOCKED**. This is not a
 completion claim.
 

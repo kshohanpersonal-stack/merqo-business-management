@@ -23,22 +23,25 @@ is never counted as an application test. Machine-readable Vitest output:
 | Prettier | `npm run format:check` | **PASSED** | — |
 | Third-party licences | `npm run licenses` | **PASSED** — 708 installed packages allow-listed | `docs/architecture/THIRD_PARTY_LICENSES.md` |
 | Secret scan (tracked files) | `npm run secrets` | **PASSED** — 152 tracked files | `scripts/dev/secret_scan.py` |
-
-> Note: Windows/Security CI rows below report 153 tracked files because commit `3b11e3a`
-> still tracked one generated `.pyc`; it was removed in this evidence refresh, so the
-> current local scan inspects 152 files. The CI result itself remains valid.
 | Renderer + Electron bundles | `npm run build` | **PASSED** | `dist/`, `dist-electron/` |
 | Owner-only generator | `npm run build:generator` | **PASSED** — SEA blob 17,538 bytes; CLI `help` smoke test | `dist-electron/license-generator.blob` |
 | Generator issue/verify/list | `node dist-electron/license-generator.cjs …` | **PASSED** — Ed25519 signature verified | ignored `private/` artefacts |
 | Live preview API end-to-end | `npm run smoke` | **12/12 PASSED** | fresh DB → activation → setup → product → sale → dashboard → report → backup → reconcile |
 
-## Executed GitHub Actions runs (commit `3b11e3a`)
+> Note: the `3b11e3a` CI rows below report 153 tracked files because that commit still
+> tracked one generated `.pyc`; it was removed in the evidence refresh, so the current
+> local scan and the `efacbaf` CI rows inspect 152 files. Both CI results remain valid.
+
+## Executed GitHub Actions runs (`3b11e3a` and docs-refresh `efacbaf`)
 
 | Run | Workflow | Result | Key steps |
 | --- | --- | --- | --- |
 | `41642232635` | CI — quality, tests and Linux build | **SUCCESS** | regenerate checklist, typecheck, lint, `npm test` 41/41, build, 708 licences, 153-file secret scan |
 | `41642232646` | Security checks | **SUCCESS** | secret scan, `npm audit` (non-blocking), licence allow-list, owner-only-artifact policy |
 | `41642232644` | Windows build — installer and owner-only generator | **SUCCESS** (4 m 30 s) | `npm ci --ignore-scripts`, `node node_modules/electron/install.js`, typecheck, `npm test` 41/41 (23.84 s), build, SQLite N-API 3.53.4 load, NSIS installer, 153-file secret scan, generator SEA EXE, SHA-256 checksums, two protected artifacts |
+| `41645278808` | CI — quality, tests and Linux build | **SUCCESS** (41 s) | regenerate checklist, typecheck, lint, `npm test` 41/41, build, 708 licences, 152-file secret scan |
+| `41645278586` | Security checks | **SUCCESS** | secret scan, `npm audit` (non-blocking), licence allow-list, owner-only-artifact policy |
+| `41645278572` | Windows build — installer and owner-only generator | **SUCCESS** (4 m 39 s) | `npm ci --ignore-scripts`, explicit Electron install, typecheck, `npm test` 41/41 (22.51 s), build, SQLite N-API 3.53.4 load, NSIS installer, 152-file secret scan, generator SEA EXE, SHA-256 checksums, two protected artifacts |
 
 Earlier Windows/CI runs failed and were fixed: `41637701817` (CRLF schema diff),
 `41637702024` (non-deterministic checklist timestamp), `41638809098` (`scripts/build/`
@@ -51,7 +54,7 @@ Electron 43), `41641120508` (npm auto-ran node-gyp during `npm ci`). See
 
 | Area | Status | Reason |
 | --- | --- | --- |
-| Windows NSIS install, Start Menu/desktop shortcuts, uninstall, first-launch activation | **BLOCKED** | Installer built in CI `41642232644` but never installed or activated on real Windows hardware |
+| Windows NSIS install, Start Menu/desktop shortcuts, uninstall, first-launch activation | **BLOCKED** | Installer built in CI `41642232644` and re-built in `41645278572`, but never installed or activated on real Windows hardware |
 | Physical 58/80 mm thermal printing and paper cut | **BLOCKED** | No printer attached |
 | USB/Bluetooth barcode scanner wedge input | **BLOCKED** | No scanner attached |
 | Windows multi-component device fingerprint / hardware-change transfer | **BLOCKED** | Windows-only PowerShell/CIM identifiers; dev fingerprint used in preview |
@@ -64,4 +67,5 @@ Electron 43), `41641120508` (npm auto-ran node-gyp during `npm ci`). See
 
 No test result in this document is inferred. UI screens are implemented and their data path
 is exercised by the preview API smoke test, but visual rendering is explicitly untested.
-Windows CI artifacts are technical build outputs, not a released or production-ready product.
+Windows CI artifacts from both runs are technical build outputs, not a released or
+production-ready product.

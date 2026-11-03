@@ -27,16 +27,23 @@ is **BLOCKED**.
 | Trusted code signing / SmartScreen clearance | **BLOCKED** | KI-002 |
 | Version tag / GitHub Release / release notes | **BLOCKED** | KI-016 |
 
-## Windows CI artifacts from run 41642232644 (not released)
+## Windows CI artifacts from run 41642232644 / source commit 3b11e3a (not released)
 
 | Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
 | --- | --- | --- | --- | --- |
 | `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,408 bytes | 13232244667 | `b6b839c20657ed46c8f44ec29c3de4a94d64de6528d40208e9f1a2be95d64323` (ZIP 131,637,527 bytes) |
 | `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13232224614 | `9cd526803fa2f398e567f0bc4c102aabed46655046eec08d128cccb3a16c2a80` (ZIP 34,334,219 bytes) |
 
+## Re-verification artifacts from run 41645278572 / docs-refresh efacbaf (not released)
+
+| Artifact | File | Size | Artifact ID | Uploaded ZIP SHA-256 |
+| --- | --- | --- | --- | --- |
+| `MERQO-Windows-Installer` | `MERQO-Setup-0.1.0-x64.exe` | 131,626,411 bytes | 13235565390 | `a961248398bdae438b055bb6b30e45dd7bf3db88961c32570b761c6d6ea8067b` (ZIP 131,637,535 bytes) |
+| `MERQO-OWNER-ONLY-License-Generator` | `MERQO-License-Generator.exe` + `SHA256SUMS-PRIVATE.txt` | — | 13235615213 | `64c5f6c8a3f30c248cd5ad6d6dd1aac4cab6339304f8a95ec05f7ff92ea7ee1d` (ZIP 34,334,219 bytes) |
+
 The sandbox cannot download artifact blobs, so the individual per-file hashes generated in
-`SHA256SUMS.txt` are not reproduced here. The installer embeds the **development** Ed25519
-public key and is unsigned for release purposes.
+`SHA256SUMS.txt` are not reproduced here. Both builds embed the **development** Ed25519
+public key and are unsigned for release purposes.
 
 ## Required before this file can become a real final build report
 

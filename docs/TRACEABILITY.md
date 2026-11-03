@@ -18,7 +18,7 @@ used to regenerate it. `docs/TEST_CASES.md` maps TC IDs to executable tests and 
 | P12-AUTH / P21-SEC | `src/core/auth.ts`, `sessions.ts`, `permissions.ts`, `audit.ts`, `validation.ts`, `logger.ts` | `tests/security/auth.test.ts` |
 | P18-LIC | `src/core/licensing.ts`, `activation.ts`, `src/main/device.ts`, `apps/license-generator/src/index.ts` | `tests/unit/licensing.test.ts`, `tests/integration/activation.test.ts`, Windows artifact 13232224614 |
 | P14-UI / P15-ANIM / P16-GRT / P17-KEY | `src/renderer/App.tsx`, `styles.css`, `components.tsx`, `pages/*` | `scripts/dev/smoke-preview.mjs` (data path only); visual QA `BLOCKED` |
-| P19-WIN / P20-CI / P28-DEL | `src/main/*`, `src/preload/index.ts`, `electron-builder.yml`, `.github/workflows/*` | Windows CI `41642232644` (installer artifact 13232244667, generator artifact 13232224614), Linux CI `41642232635`, Security `41642232646`; install/release QA `BLOCKED` |
+| P19-WIN / P20-CI / P28-DEL | `src/main/*`, `src/preload/index.ts`, `electron-builder.yml`, `.github/workflows/*` | Windows CI `41642232644` (installer 13232244667, generator 13232224614) re-verified as `41645278572` (installer 13235565390, generator 13235615213); Linux CI `41642232635` / `41645278808`, Security `41642232646` / `41645278586`; install/release QA `BLOCKED` |
 | P22-PERF | `src/core/util.ts`, `reports.ts`, migration indexes | `tests/performance/large-dataset.test.ts` |
 
 ## CI evidence (commit `3b11e3a`)
@@ -28,6 +28,9 @@ used to regenerate it. `docs/TEST_CASES.md` maps TC IDs to executable tests and 
 * Windows build — installer and owner-only generator: run `41642232644`, **SUCCESS**
   (job `125938377073`), produced `MERQO-Setup-0.1.0-x64.exe` and
   `MERQO-License-Generator.exe` plus SHA-256 checksum files.
+* Re-verification on docs-only commit `efacbaf`: CI `41645278808`, Security
+  `41645278586`, Windows build `41645278572` (job `125948863993`) all **SUCCESS**;
+  the Windows job re-built the unsigned dev-key installer and owner-only generator EXE.
 * Earlier failures and their fixes are recorded in `docs/BUILD_HISTORY.md` B-005..B-011.
 
 ## Conventions
