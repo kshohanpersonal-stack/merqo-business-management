@@ -1,0 +1,53 @@
+name: Release — draft public release (owner approval required)
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to package (e.g. v0.1.0)
+        required: true
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npx electron-builder install-app-deps --platform=win32 --arch=x64
+      - run: npx electron-builder --win --x64 --publish never
+      - run: node scripts/build/verify-no-secrets.mjs
+      - name: Generate checksums for authorized public assets only
+        shell: pwsh
+        run: |
+          Get-ChildItem installers/output -File -Filter *.exe | ForEach-Object {
+            $h = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            "$($h.ToLower())  $($_.Name)" | Out-File -Append -Encoding utf8 installers/output/SHA256SUMS.txt
+          }
+      - name: Create DRAFT release (owner publishes after QA)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        shell: pwsh
+        run: |
+          $notes = @"
+          ## MERQO $TAG — technical release candidate
+
+          - Windows x64 NSIS installer. Activation is a dedicated first-run component of the main app.
+          - The owner-only licence generator is NOT included; it is delivered privately.
+          - Build: $env:GITHUB_RUN_ID / $env:GITHUB_SHA
+          - See docs/TESTING_STATUS.md, docs/KNOWN_ISSUES.md and docs/release/BUILD_REPORT.md.
+          - Unsigned build: Windows SmartScreen will warn until a code-signing certificate is configured.
+          - This draft is not a final production release until installation and activation are verified.
+          "@
+          Set-Content -Path release-notes.md -Value $notes -Encoding utf8
+          gh release create $env:TAG --draft --title "MERQO $env:TAG" --notes-file release-notes.md installers/output/*.exe installers/output/SHA256SUMS.txt

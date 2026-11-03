@@ -1,0 +1,27 @@
+# Test Case Register
+
+Status definitions: `PASSED`, `FAILED`, `BLOCKED`, `NOT TESTED`. Actual results are recorded
+only from executed commands. Evidence paths are repository-relative.
+
+| Test ID | Requirement ref | Description | Preconditions | Steps | Expected | Actual | Status | Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| TC-001 | R-P6-DB-010 | Money parsing uses integers, Bangla digits and half-up rounding | fresh core | parse `১২৩.৪৫`, `123.456`, `-5`, `0.005` | integer minor units / validation error | 5/5 assertions passed | **PASSED** | `tests/unit/money.test.ts` |
+| TC-002 | R-P6-DB-012 | Sale rolls back atomically when a payment account is invalid | seeded DB | complete sale with invalid account | no sale/stock/ledger rows remain | rollback confirmed | **PASSED** | `tests/integration/sales.test.ts` |
+| TC-003 | R-P8-FIN-003 | COGS uses historical weighted-average unit cost | purchase 10 @10, 10 @12 + 5 extra cost, sell 2 | complete sale | COGS 2250, average cost 1125 | matched | **PASSED** | `tests/integration/sales.test.ts` |
+| TC-004 | R-P8-FIN-005 | Ledger/account reconciliation | after purchase, sale, due collection, cancel | `reconcile()` | all 10 checks ok | ok | **PASSED** | `tests/integration/sales.test.ts`, `tests/integration/returns.test.ts` |
+| TC-005 | R-P7-RET-001 | Returns, refunds, exchange, adjustments, expense void and VAT | seeded sale/purchase | six return scenarios | stock, COGS, ledger, account and audit correct | 6/6 passed | **PASSED** | `tests/integration/returns.test.ts` |
+| TC-006 | R-P11-BAK-005 | Backup verification, tamper detection, encryption, safety backup and restore | live DB | create/verify/tamper/restore | `MERQOBAK` v1 valid; tamper rejected; writable reopened DB | 2/2 passed | **PASSED** | `tests/integration/backup.test.ts` |
+| TC-007 | R-P9-RPT-007 | All 28 reports run with filters; CSV/XLSX/PDF/HTML export | seeded DB | `runReport` + `exportReport` | 28 reports, UTF-8 BOM Bangla CSV, `PK` XLSX, `%PDF-`, `@font-face` HTML | 3/3 passed | **PASSED** | `tests/integration/reports.test.ts` |
+| TC-008 | R-P22-PERF-003 | 10,000-product search and dashboard timing | seeded 10k rows | p95 search + dashboard | indexed, under budget | p95 9.0 ms, dashboard 5.1 ms | **PASSED** | `tests/performance/large-dataset.test.ts` |
+| TC-009 | R-P18-LIC-005 | Offline activation unlocks only after a valid signed licence | fresh DB | locked → bootstrap → activate → setup/login | invalid licence rejected; valid unlocks | 2/2 passed | **PASSED** | `tests/integration/activation.test.ts`, `scripts/dev/smoke-preview.mjs` |
+| TC-010 | R-P12-AUTH-003 | scrypt hash, lockout, server-side RBAC, SQL injection, unsafe paths, redacted logs | seeded users | 5 security scenarios | all protections hold | 5/5 passed | **PASSED** | `tests/security/auth.test.ts` |
+| TC-011 | R-P6-DB-003 | Schema integrity, FK, indexes, WAL, rollback, idempotent migration | temp DB | `npm run db:verify` | 30/30 checks pass | 30/30 passed | **PASSED** | `scripts/database/verify.mjs` |
+| TC-012 | R-P24-PHASE-008 | Live preview API: activation → setup → product → sale → dashboard → report → backup → reconcile | `npm run dev` | `node scripts/dev/smoke-preview.mjs` | 12 checks pass | 12/12 passed | **PASSED** | `scripts/dev/smoke-preview.mjs` |
+| TC-013 | R-P7-PROD-007 | Product-level percent and fixed discounts, with line override | seeded products | `sale.preview` with/without explicit discount | 350 minor discount; override 300 | matched | **PASSED** | `tests/integration/sales.test.ts` |
+| TC-014 | R-P18-LIC-009 | Owner-only generator issues, verifies and lists unique signed licences | dev private key | generator `issue`/`verify`/`list` | Ed25519 signature valid | passed | **PASSED** | `apps/license-generator/src/index.ts`, `npm run build:generator` |
+| TC-015 | R-P19-WIN-002 | NSIS install, shortcuts, custom icon, first-launch activation, uninstall | Windows host + signed installer | install and exercise wizard | app runs offline after activation | not executable here | **BLOCKED** | `docs/KNOWN_ISSUES.md` KI-001 |
+| TC-016 | R-P7-INV-005 | 58/80 mm thermal print with Bangla glyphs and paper cut | physical thermal printer | print sale receipt | correct thermal output | not executable here | **BLOCKED** | KI-003 |
+| TC-017 | R-P7-BAR-003 | USB/Bluetooth scanner wedge input resolves product | physical scanner | scan barcode in POS | product added to cart | not executable here | **BLOCKED** | KI-003 |
+| TC-018 | R-P14-UI-008 | Visual QA at 1280×720, 1366×768, 1440×900, 1920×1080 | browser/Electron window | resize and inspect every screen | no overlap/crop/overflow/dead control | no browser binary | **BLOCKED** | KI-012 |
+| TC-019 | R-P25-TST-002 | Functional test for every interactive control | browser automation | click every control | all actions functional | not executable here | **BLOCKED** | KI-012 |
+| TC-020 | R-P20-CI-004 | Tag-triggered Windows CI, checksums, release notes | pushed version tag | `gh run list` | installer + authorised assets | no tag/CI run | **BLOCKED** | KI-013 |

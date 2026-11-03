@@ -1,0 +1,30 @@
+name: Security checks
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: npm ci
+      - name: No secrets or customer data tracked
+        run: python3 scripts/dev/secret_scan.py
+      - name: Dependency vulnerability audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+      - name: Dependency licence allow-list
+        run: npm run licenses
+      - name: Owner-only artifacts must not be in the repository
+        run: |
+          if git ls-files | grep -Ei '(license-generator.*\.exe|\.pem$|private-key|merqobak$|\.sqlite$)'; then
+            echo "Forbidden artifact tracked"; exit 1
+          fi
+          echo "No owner-only artifacts in repository"

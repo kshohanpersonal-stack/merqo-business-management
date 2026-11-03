@@ -1,0 +1,15 @@
+Copyright (c) 2026 MERQO. All rights reserved.
+Founder: Shohan Khan. Contact: merqoonline@gmail.com
+
+PROPRIETARY COMMERCIAL SOFTWARE NOTICE
+
+This repository contains the source code of a commercial software product owned by
+MERQO. It is published publicly for development transparency and review. No licence is
+granted, by implication or otherwise, to use, copy, modify, merge, publish, distribute,
+sublicense, sell copies of the software, or to permit third parties to do so, except as
+expressly authorised in writing by MERQO or under a lifetime licence agreement issued by
+MERQO to a named business.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. MERQO IS NOT LIABLE FOR
+ANY CLAIM OR DAMAGES ARISING FROM ITS USE. Third-party components and bundled fonts remain
+under their own licences; see docs/architecture/THIRD_PARTY_LICENSES.md.

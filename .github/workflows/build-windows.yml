@@ -1,0 +1,51 @@
+name: Windows build — installer and owner-only generator
+on:
+  push:
+    branches: ['arena/e53fcc9d-merqo-business-management', 'main']
+  workflow_dispatch:
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Rebuild native SQLite module for Electron ABI
+        run: npx electron-builder install-app-deps --platform=win32 --arch=x64
+      - name: Build NSIS installer
+        run: npx electron-builder --win --x64 --publish never
+      - name: Verify no private material is in public output
+        run: node scripts/build/verify-no-secrets.mjs
+      - name: Build owner-only licence generator (Node SEA)
+        run: npm run build:generator
+      - name: Checksums
+        shell: pwsh
+        run: |
+          Get-ChildItem installers/output -File -Filter *.exe | ForEach-Object {
+            $h = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            "$($h.ToLower())  $($_.Name)" | Out-File -Append -Encoding utf8 installers/output/SHA256SUMS.txt
+          }
+          Get-ChildItem installers/output/private -File -Filter *.exe | ForEach-Object {
+            $h = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            "$($h.ToLower())  PRIVATE/$($_.Name)" | Out-File -Append -Encoding utf8 installers/output/private/SHA256SUMS-PRIVATE.txt
+          }
+      - name: Upload PUBLIC installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MERQO-Windows-Installer
+          path: |
+            installers/output/*.exe
+            installers/output/SHA256SUMS.txt
+          if-no-files-found: error
+      - name: Upload OWNER-ONLY artifact (never a public release asset)
+        uses: actions/upload-artifact@v4
+        with:
+          name: MERQO-OWNER-ONLY-License-Generator
+          path: installers/output/private/*
+          if-no-files-found: error
+          retention-days: 7

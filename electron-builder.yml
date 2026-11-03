@@ -1,0 +1,36 @@
+appId: com.merqo.pos
+productName: MERQO
+copyright: Copyright © 2026 MERQO
+artifactName: MERQO-Setup-${version}-${arch}.${ext}
+directories:
+  output: installers/output
+  buildResources: assets/icons
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - assets/**/*
+  - database/**/*
+  - package.json
+  - node_modules/**/*
+asar: true
+asarUnpack:
+  - node_modules/better-sqlite3/**/*
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icons/merqo.ico
+  legalTrademarks: MERQO
+  # Code signing is intentionally NOT configured: an owner-supplied certificate is
+  # required before any public final release. See docs/KNOWN_ISSUES.md KI-002.
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: MERQO
+  installerIcon: assets/icons/merqo.ico
+  uninstallerIcon: assets/icons/merqo.ico
+  deleteAppDataOnUninstall: false
+  license: LICENSE

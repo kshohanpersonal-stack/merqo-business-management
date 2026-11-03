@@ -1,0 +1,53 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+dist-electron/
+out/
+build/
+coverage/
+*.tsbuildinfo
+.arena/
+.cache/
+.vite/
+
+# Local runtime data / private customer data
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.merqobak
+*.merqobak.tmp
+logs/*
+!logs/.gitkeep
+user-data/
+.merqo-data/
+data/
+backups/
+*.merqolic
+
+# Licensing secrets — NEVER commit private keys or generated owner artifacts
+*.pem
+*.key
+*.p12
+*.pfx
+private/
+secrets/
+license-private-key.json
+license-generator-records.json
+apps/license-generator/keys/
+apps/license-generator/output/
+installers/*.exe
+installers/output/
+
+# Environment / credentials / OS noise
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+desktop.ini
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*

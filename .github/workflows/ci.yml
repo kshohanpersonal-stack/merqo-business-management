@@ -1,0 +1,35 @@
+name: CI — quality, tests and Linux build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: npm ci
+      - name: Regenerate requirement checklist and verify it is current
+        run: |
+          python3 scripts/dev/generate_requirements.py
+          git diff --exit-code -- docs/MASTER_REQUIREMENT_CHECKLIST.md docs/requirements.json
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npm run licenses
+      - run: python3 scripts/dev/secret_scan.py
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-test-results
+          path: |
+            docs/test-results.json
+            coverage/
+          if-no-files-found: warn
