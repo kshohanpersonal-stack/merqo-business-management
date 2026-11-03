@@ -1,7 +1,7 @@
 # Development Progress
 
 Last updated: 2026-11-03 · Branch: `arena/e53fcc9d-merqo-business-management`
-Base commit: `3a42431 Initial commit` · Repository visibility: **public** (confirmed with `gh api`).
+Base commit: `3a42431 Initial commit` · Integrated milestone commit: `c0c620d` · Repository visibility: **public** (confirmed with `gh api`).
 
 ## Current phase
 
@@ -49,4 +49,6 @@ hardware, Windows installer/installation/activation test, signed GitHub release)
   Report for the Windows-only suites.
 
 See `docs/KNOWN_ISSUES.md`, `docs/MASTER_REQUIREMENT_CHECKLIST.md` (16 IMPLEMENTED,
-192 TESTING, 39 BLOCKED before the milestone commit) and `docs/NEXT_ACTIONS.md`.
+143 TESTING, 49 PASSED, 39 BLOCKED after commit `c0c620d`) and `docs/NEXT_ACTIONS.md`.
+The 49 `PASSED` entries have all eleven verification steps satisfied by executed tests and
+the committed source; 39 `BLOCKED` entries are Windows/hardware/release items.

@@ -1,6 +1,6 @@
 # Final Build Report — NOT COMPLETE
 
-Last updated: 2026-11-03. **This is not a release report.** No Windows installer, no
+Last updated: 2026-11-03 · source commit `c0c620d`. **This is not a release report.** No Windows installer, no
 installation/activation test, no code-signed binary, no tag, no GitHub Release and no
 Windows artefact checksums exist yet. The strict completion gate is **BLOCKED**.
 

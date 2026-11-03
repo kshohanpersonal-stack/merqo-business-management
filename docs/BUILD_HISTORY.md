@@ -1,7 +1,7 @@
 # Build History
 
 Last updated: 2026-11-03. Compilation is recorded separately from application testing.
-No Windows installer has been produced in this sandbox.
+No Windows installer has been produced in this sandbox. Integrated source commit: `c0c620d`.
 
 | Build ID | Date (UTC) | Command | Platform | Version | Result | Artefacts |
 | --- | --- | --- | --- | --- | --- | --- |

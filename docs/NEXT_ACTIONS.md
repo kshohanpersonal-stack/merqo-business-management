@@ -4,32 +4,31 @@ Last updated: 2026-11-03
 
 ## Exact next development task
 
-**Commit and push the integrated Phase 3–8 implementation, then run the Windows pipeline.**
-Concretely:
+**Owner action required: provision the production signing material and run the Windows
+pipeline.** The integrated Phase 3–8 implementation is committed as `c0c620d` and pushed to
+`arena/e53fcc9d-merqo-business-management`; the evidence refresh commit follows. The
+checklist now reports 49 PASSED / 39 BLOCKED after the milestone commit.
 
-1. `git add -A` (excluding ignored `private/`, `.merqo-data/`, `dist*`, `installers/`),
-   re-run `npm run secrets`, and create a meaningful feature commit on
-   `arena/e53fcc9d-merqo-business-management`; push with
-   `git push origin arena/e53fcc9d-merqo-business-management`.
-2. Regenerate `docs/requirement-overrides.json` with
-   `python3 scripts/dev/update-checklist.py --committed`, regenerate the checklist, and
-   commit the evidence refresh.
-3. Replace `src/core/public-key.ts` with the owner's production Ed25519 public key and
-   provision a Windows code-signing certificate in GitHub Actions secrets (owner action).
-4. Push a semantic version tag (e.g. `v0.1.0`) to trigger
+1. Replace `src/core/public-key.ts` with the owner's production Ed25519 public key
+   (matching an owner-only private key that is never committed) and provision a Windows
+   code-signing certificate in GitHub Actions secrets (owner action, KI-002/KI-011).
+2. Push a semantic version tag (e.g. `v0.1.0`) to trigger
    `.github/workflows/build-windows.yml` and `.github/workflows/release.yml` on
    `windows-latest`; inspect `gh run list`, verify installer/generator outputs, checksums
    and that the generator EXE is **not** a public release asset.
-5. On a real Windows machine: install the NSIS package, confirm desktop/Start Menu
+3. On a real Windows machine: install the NSIS package, confirm desktop/Start Menu
    shortcuts and custom icon, first-launch activation with a production licence, business
    setup, first admin, POS → purchase → sale → return → backup → restore, Bangla
    PDF/XLSX/CSV export, 58/80 mm thermal print, barcode scanner input, uninstaller, and
    user-data survival outside the install directory.
-6. Run browser/Electron visual QA at 1280×720, 1366×768, 1440×900 and 1920×1080; record
+4. Run browser/Electron visual QA at 1280×720, 1366×768, 1440×900 and 1920×1080; record
    every interactive control in `docs/TEST_CASES.md`.
-7. Produce `docs/FINAL_BUILD_REPORT.md` with real artefact sizes/SHA-256, release URL and
+5. Produce `docs/FINAL_BUILD_REPORT.md` with real artefact sizes/SHA-256, release URL and
    installation/activation results; then create the versioned GitHub Release with
    authorised assets only.
+6. After every Windows/CI result, re-run `python3 scripts/dev/update-checklist.py
+   --committed`, `python3 scripts/dev/generate_requirements.py`, refresh state docs and
+   commit/push again.
 
 ## Recovery instructions for `CONTINUE`
 

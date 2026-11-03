@@ -10,7 +10,7 @@ Founder: Shohan Khan · merqoonline@gmail.com.
 > [`docs/MASTER_REQUIREMENT_CHECKLIST.md`](docs/MASTER_REQUIREMENT_CHECKLIST.md),
 > [`docs/TESTING_STATUS.md`](docs/TESTING_STATUS.md) and
 > [`docs/KNOWN_ISSUES.md`](docs/KNOWN_ISSUES.md) for the exact, evidence-based state.
-> Nothing in this README claims production readiness.
+> Nothing in this README claims production readiness. Integrated milestone: `c0c620d`.
 
 ## What is implemented
 

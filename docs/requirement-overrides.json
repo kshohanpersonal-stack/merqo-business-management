@@ -25,7 +25,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-002": {
@@ -54,11 +54,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "README.md",
@@ -71,7 +71,7 @@
     "tests": [
       "scripts/dev/secret_scan.py"
     ],
-    "notes": "Custom product logo and 16/24/32/48/64/128/256 px icons plus .ico generated; no separate company logo. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Custom product logo and 16/24/32/48/64/128/256 px icons plus .ico generated; no separate company logo.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -112,11 +112,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "README.md",
@@ -129,7 +129,7 @@
     "tests": [
       "scripts/dev/secret_scan.py"
     ],
-    "notes": "Branch, HEAD, origin, gh authentication and public visibility confirmed via git/gh. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Branch, HEAD, origin, gh authentication and public visibility confirmed via git/gh.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -170,7 +170,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-007": {
@@ -199,7 +199,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-008": {
@@ -228,7 +228,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-009": {
@@ -257,7 +257,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-010": {
@@ -286,11 +286,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P1-GOV-011": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "README.md",
@@ -303,7 +303,7 @@
     "tests": [
       "scripts/dev/secret_scan.py"
     ],
-    "notes": "gh api confirms repository visibility public; unchanged. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "gh api confirms repository visibility public; unchanged.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -355,7 +355,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-002": {
@@ -395,11 +395,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/dispatch.ts",
@@ -423,7 +423,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "npm run licenses verified 722 installed packages against commercial allow-list. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "npm run licenses verified 722 installed packages against commercial allow-list.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -475,7 +475,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-005": {
@@ -515,7 +515,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-006": {
@@ -555,7 +555,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-007": {
@@ -595,7 +595,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P3-ARCH-008": {
@@ -635,7 +635,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-001": {
@@ -664,7 +664,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-002": {
@@ -693,7 +693,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-003": {
@@ -722,7 +722,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-004": {
@@ -751,7 +751,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-005": {
@@ -780,7 +780,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P4-BRAND-006": {
@@ -809,7 +809,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-001": {
@@ -840,7 +840,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-002": {
@@ -871,7 +871,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-003": {
@@ -902,11 +902,11 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/renderer/styles.css",
@@ -921,7 +921,7 @@
       "tests/unit/money.test.ts",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "Noto Sans Bengali WOFF2/TTF and assets/fonts/OFL.txt bundled. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Noto Sans Bengali WOFF2/TTF and assets/fonts/OFL.txt bundled.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -964,7 +964,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-006": {
@@ -995,7 +995,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-007": {
@@ -1026,7 +1026,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-008": {
@@ -1057,7 +1057,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P5-LOC-009": {
@@ -1088,7 +1088,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P6-DB-001": {
@@ -1120,11 +1120,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P6-DB-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1140,7 +1140,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1156,7 +1156,7 @@
     }
   },
   "R-P6-DB-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1172,7 +1172,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1188,7 +1188,7 @@
     }
   },
   "R-P6-DB-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1204,7 +1204,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1220,7 +1220,7 @@
     }
   },
   "R-P6-DB-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1236,7 +1236,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1252,7 +1252,7 @@
     }
   },
   "R-P6-DB-006": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1268,7 +1268,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1284,7 +1284,7 @@
     }
   },
   "R-P6-DB-007": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1300,7 +1300,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1316,7 +1316,7 @@
     }
   },
   "R-P6-DB-008": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1332,7 +1332,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1348,7 +1348,7 @@
     }
   },
   "R-P6-DB-009": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1364,7 +1364,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1380,7 +1380,7 @@
     }
   },
   "R-P6-DB-010": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1396,7 +1396,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1412,7 +1412,7 @@
     }
   },
   "R-P6-DB-011": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1428,7 +1428,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1444,7 +1444,7 @@
     }
   },
   "R-P6-DB-012": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1460,7 +1460,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1476,7 +1476,7 @@
     }
   },
   "R-P6-DB-013": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "database/migrations/001_initial.sql",
@@ -1492,7 +1492,7 @@
       "tests/integration/backup.test.ts",
       "scripts/database/verify.mjs"
     ],
-    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Schema smoke, migration idempotency, FK/integrity checks, ACID rollback, idempotency and atomic workflows executed successfully.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -1530,7 +1530,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-002": {
@@ -1556,7 +1556,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-003": {
@@ -1582,7 +1582,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-004": {
@@ -1608,7 +1608,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-005": {
@@ -1634,7 +1634,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-006": {
@@ -1660,7 +1660,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-007": {
@@ -1686,7 +1686,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-DASH-008": {
@@ -1712,7 +1712,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-001": {
@@ -1739,7 +1739,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-002": {
@@ -1766,7 +1766,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-003": {
@@ -1793,7 +1793,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-004": {
@@ -1820,7 +1820,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-005": {
@@ -1847,7 +1847,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-006": {
@@ -1874,7 +1874,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-007": {
@@ -1901,7 +1901,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PROD-008": {
@@ -1928,7 +1928,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-UNIT-001": {
@@ -1954,7 +1954,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-UNIT-002": {
@@ -1980,7 +1980,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-UNIT-003": {
@@ -2006,7 +2006,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-UNIT-004": {
@@ -2032,7 +2032,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-BAR-001": {
@@ -2058,7 +2058,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-BAR-002": {
@@ -2084,7 +2084,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-BAR-003": {
@@ -2110,7 +2110,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-BAR-004": {
@@ -2136,7 +2136,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-BAR-005": {
@@ -2162,7 +2162,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-001": {
@@ -2190,7 +2190,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-002": {
@@ -2218,7 +2218,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-003": {
@@ -2246,7 +2246,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-004": {
@@ -2274,7 +2274,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-005": {
@@ -2302,7 +2302,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-006": {
@@ -2330,7 +2330,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-007": {
@@ -2358,7 +2358,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-008": {
@@ -2386,7 +2386,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-009": {
@@ -2414,7 +2414,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-POS-010": {
@@ -2442,7 +2442,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-001": {
@@ -2469,7 +2469,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-002": {
@@ -2496,7 +2496,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-003": {
@@ -2523,7 +2523,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-004": {
@@ -2550,7 +2550,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-005": {
@@ -2577,7 +2577,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-006": {
@@ -2604,7 +2604,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-INV-007": {
@@ -2631,7 +2631,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-CUST-001": {
@@ -2657,7 +2657,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-CUST-002": {
@@ -2683,7 +2683,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-CUST-003": {
@@ -2709,7 +2709,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-CUST-004": {
@@ -2735,7 +2735,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-CUST-005": {
@@ -2761,7 +2761,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-SUPP-001": {
@@ -2787,7 +2787,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-SUPP-002": {
@@ -2813,7 +2813,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-SUPP-003": {
@@ -2839,7 +2839,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PUR-001": {
@@ -2865,7 +2865,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PUR-002": {
@@ -2891,7 +2891,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PUR-003": {
@@ -2917,7 +2917,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PUR-004": {
@@ -2943,7 +2943,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-PUR-005": {
@@ -2969,7 +2969,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-EXP-001": {
@@ -2996,7 +2996,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-EXP-002": {
@@ -3023,7 +3023,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-EXP-003": {
@@ -3050,7 +3050,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-EXP-004": {
@@ -3077,7 +3077,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-FIN-001": {
@@ -3105,7 +3105,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-FIN-002": {
@@ -3133,7 +3133,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-FIN-003": {
@@ -3161,7 +3161,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-FIN-004": {
@@ -3189,7 +3189,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-FIN-005": {
@@ -3217,7 +3217,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-RET-001": {
@@ -3244,7 +3244,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-RET-002": {
@@ -3271,7 +3271,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-RET-003": {
@@ -3298,7 +3298,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-RET-004": {
@@ -3325,7 +3325,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P7-RET-005": {
@@ -3352,11 +3352,11 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P8-FIN-001": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3372,7 +3372,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3388,7 +3388,7 @@
     }
   },
   "R-P8-FIN-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3404,7 +3404,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3420,7 +3420,7 @@
     }
   },
   "R-P8-FIN-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3436,7 +3436,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3452,7 +3452,7 @@
     }
   },
   "R-P8-FIN-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3468,7 +3468,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3484,7 +3484,7 @@
     }
   },
   "R-P8-FIN-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3500,7 +3500,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3516,7 +3516,7 @@
     }
   },
   "R-P8-FIN-006": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3532,7 +3532,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3548,7 +3548,7 @@
     }
   },
   "R-P8-FIN-007": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/finance.ts",
@@ -3564,7 +3564,7 @@
       "tests/integration/reports.test.ts",
       "tests/performance/large-dataset.test.ts"
     ],
-    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Weighted-average COGS, historical unit cost, distinct profit measures, ledgers, duplicate prevention and reconciliation verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3602,7 +3602,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-002": {
@@ -3628,7 +3628,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-003": {
@@ -3654,7 +3654,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-004": {
@@ -3680,7 +3680,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-005": {
@@ -3706,7 +3706,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-006": {
@@ -3732,7 +3732,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-007": {
@@ -3758,7 +3758,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P9-RPT-008": {
@@ -3784,11 +3784,11 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P10-EXP-001": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/exports.ts",
@@ -3798,7 +3798,7 @@
     "tests": [
       "tests/integration/reports.test.ts"
     ],
-    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3814,7 +3814,7 @@
     }
   },
   "R-P10-EXP-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/exports.ts",
@@ -3824,7 +3824,7 @@
     "tests": [
       "tests/integration/reports.test.ts"
     ],
-    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3840,7 +3840,7 @@
     }
   },
   "R-P10-EXP-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/exports.ts",
@@ -3850,7 +3850,7 @@
     "tests": [
       "tests/integration/reports.test.ts"
     ],
-    "notes": "UTF-8 CSV with Bangla headers verified by executed report export test. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "UTF-8 CSV with Bangla headers verified by executed report export test.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3866,7 +3866,7 @@
     }
   },
   "R-P10-EXP-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/exports.ts",
@@ -3876,7 +3876,7 @@
     "tests": [
       "tests/integration/reports.test.ts"
     ],
-    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3892,7 +3892,7 @@
     }
   },
   "R-P10-EXP-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/exports.ts",
@@ -3902,7 +3902,7 @@
     "tests": [
       "tests/integration/reports.test.ts"
     ],
-    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "CSV UTF-8 BOM, XLSX ZIP, PDF and embedded-font HTML verified with Bangla headers and totals by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -3940,7 +3940,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-002": {
@@ -3966,7 +3966,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-003": {
@@ -3992,7 +3992,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-004": {
@@ -4018,7 +4018,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-005": {
@@ -4044,7 +4044,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-006": {
@@ -4070,7 +4070,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-007": {
@@ -4096,7 +4096,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P11-BAK-008": {
@@ -4122,11 +4122,11 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P12-AUTH-001": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4140,7 +4140,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4156,7 +4156,7 @@
     }
   },
   "R-P12-AUTH-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4170,7 +4170,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4186,7 +4186,7 @@
     }
   },
   "R-P12-AUTH-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4200,7 +4200,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4216,7 +4216,7 @@
     }
   },
   "R-P12-AUTH-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4230,7 +4230,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4246,7 +4246,7 @@
     }
   },
   "R-P12-AUTH-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4260,7 +4260,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4276,7 +4276,7 @@
     }
   },
   "R-P12-AUTH-006": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4290,7 +4290,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4306,7 +4306,7 @@
     }
   },
   "R-P12-AUTH-007": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/auth.ts",
@@ -4320,7 +4320,7 @@
       "tests/security/auth.test.ts",
       "tests/integration/activation.test.ts"
     ],
-    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "scrypt hashing, lockout, server-side RBAC, audit, unsafe-path rejection and log redaction verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -4359,7 +4359,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P13-SET-002": {
@@ -4386,7 +4386,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P13-SET-003": {
@@ -4413,7 +4413,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P13-SET-004": {
@@ -4440,7 +4440,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P13-SET-005": {
@@ -4467,7 +4467,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P13-SET-006": {
@@ -4494,7 +4494,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-001": {
@@ -4522,7 +4522,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-002": {
@@ -4550,7 +4550,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-003": {
@@ -4578,7 +4578,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-004": {
@@ -4606,7 +4606,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-005": {
@@ -4634,7 +4634,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-006": {
@@ -4662,7 +4662,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-007": {
@@ -4690,7 +4690,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P14-UI-008": {
@@ -4718,7 +4718,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P15-ANIM-001": {
@@ -4743,7 +4743,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P15-ANIM-002": {
@@ -4768,7 +4768,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P16-GRT-001": {
@@ -4795,7 +4795,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P16-GRT-002": {
@@ -4822,7 +4822,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P16-GRT-003": {
@@ -4849,7 +4849,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P17-KEY-001": {
@@ -4876,7 +4876,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P17-KEY-002": {
@@ -4903,7 +4903,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P17-KEY-003": {
@@ -4930,7 +4930,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-001": {
@@ -4961,11 +4961,11 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/licensing.ts",
@@ -4980,7 +4980,7 @@
       "tests/security/auth.test.ts",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "Ed25519 public key embedded; private key only in ignored private/, never in main app. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Ed25519 public key embedded; private key only in ignored private/, never in main app.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5023,7 +5023,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-004": {
@@ -5054,7 +5054,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-005": {
@@ -5085,7 +5085,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-006": {
@@ -5116,7 +5116,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-007": {
@@ -5147,11 +5147,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-008": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/licensing.ts",
@@ -5166,7 +5166,7 @@
       "tests/security/auth.test.ts",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "Lifetime licence has no expiry/renewal/periodic verification field in payload or activation. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Lifetime licence has no expiry/renewal/periodic verification field in payload or activation.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5209,7 +5209,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-010": {
@@ -5240,11 +5240,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P18-LIC-011": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/licensing.ts",
@@ -5259,7 +5259,7 @@
       "tests/security/auth.test.ts",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "Tampering, invalid licence, wrong device and wrong business rejection covered by executed licensing/activation tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Tampering, invalid licence, wrong device and wrong business rejection covered by executed licensing/activation tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5302,7 +5302,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P19-WIN-001": {
@@ -5327,7 +5327,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P19-WIN-002": {
@@ -5352,7 +5352,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P19-WIN-003": {
@@ -5377,7 +5377,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P19-WIN-004": {
@@ -5402,7 +5402,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-001": {
@@ -5428,7 +5428,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-002": {
@@ -5454,7 +5454,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-003": {
@@ -5480,7 +5480,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-004": {
@@ -5506,7 +5506,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-005": {
@@ -5532,7 +5532,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P20-CI-006": {
@@ -5558,11 +5558,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P21-SEC-001": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/validation.ts",
@@ -5577,7 +5577,7 @@
       "tests/integration/activation.test.ts",
       "tests/integration/backup.test.ts"
     ],
-    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5593,7 +5593,7 @@
     }
   },
   "R-P21-SEC-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/validation.ts",
@@ -5608,7 +5608,7 @@
       "tests/integration/activation.test.ts",
       "tests/integration/backup.test.ts"
     ],
-    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5624,7 +5624,7 @@
     }
   },
   "R-P21-SEC-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/validation.ts",
@@ -5639,7 +5639,7 @@
       "tests/integration/activation.test.ts",
       "tests/integration/backup.test.ts"
     ],
-    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5655,7 +5655,7 @@
     }
   },
   "R-P21-SEC-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/validation.ts",
@@ -5670,7 +5670,7 @@
       "tests/integration/activation.test.ts",
       "tests/integration/backup.test.ts"
     ],
-    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5686,7 +5686,7 @@
     }
   },
   "R-P21-SEC-005": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "src/core/validation.ts",
@@ -5701,7 +5701,7 @@
       "tests/integration/activation.test.ts",
       "tests/integration/backup.test.ts"
     ],
-    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "Parameterized SQL, safe paths, salted scrypt, Ed25519 verification, RBAC, redacted errors/logs and backup integrity verified by executed tests.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -5741,7 +5741,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P22-PERF-002": {
@@ -5769,7 +5769,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P22-PERF-003": {
@@ -5797,7 +5797,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P22-PERF-004": {
@@ -5825,7 +5825,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P23-DOC-001": {
@@ -5868,7 +5868,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P23-DOC-002": {
@@ -5911,7 +5911,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P23-DOC-003": {
@@ -5954,7 +5954,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P23-DOC-004": {
@@ -5997,7 +5997,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P23-DOC-005": {
@@ -6040,7 +6040,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-001": {
@@ -6078,7 +6078,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-002": {
@@ -6116,7 +6116,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-003": {
@@ -6154,7 +6154,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-004": {
@@ -6192,7 +6192,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-005": {
@@ -6230,7 +6230,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-006": {
@@ -6268,7 +6268,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-007": {
@@ -6306,7 +6306,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-008": {
@@ -6344,7 +6344,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-009": {
@@ -6382,7 +6382,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-010": {
@@ -6420,7 +6420,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P24-PHASE-011": {
@@ -6458,7 +6458,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-001": {
@@ -6498,7 +6498,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-002": {
@@ -6538,7 +6538,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-003": {
@@ -6578,7 +6578,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-004": {
@@ -6618,7 +6618,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-005": {
@@ -6658,7 +6658,7 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-006": {
@@ -6698,7 +6698,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P25-TST-007": {
@@ -6738,11 +6738,11 @@
       "integrationTest": true,
       "edgeCases": true,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P26-CHK-001": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "docs/MASTER_REQUIREMENT_CHECKLIST.md",
@@ -6765,7 +6765,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -6781,7 +6781,7 @@
     }
   },
   "R-P26-CHK-002": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "docs/MASTER_REQUIREMENT_CHECKLIST.md",
@@ -6804,7 +6804,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -6820,7 +6820,7 @@
     }
   },
   "R-P26-CHK-003": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "docs/MASTER_REQUIREMENT_CHECKLIST.md",
@@ -6843,7 +6843,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "247 requirements, eight statuses, eleven verification steps and requirement↔code↔test traceability are maintained from real evidence.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -6859,7 +6859,7 @@
     }
   },
   "R-P26-CHK-004": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "docs/MASTER_REQUIREMENT_CHECKLIST.md",
@@ -6882,7 +6882,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "No requirement marked PASSED without executed tests and full verification evidence. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "No requirement marked PASSED without executed tests and full verification evidence.",
     "verification": {
       "understood": true,
       "plan": true,
@@ -6934,7 +6934,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-002": {
@@ -6974,7 +6974,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-003": {
@@ -7014,7 +7014,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-004": {
@@ -7054,7 +7054,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-005": {
@@ -7094,7 +7094,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-006": {
@@ -7134,7 +7134,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-007": {
@@ -7174,7 +7174,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-008": {
@@ -7214,7 +7214,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-009": {
@@ -7254,7 +7254,7 @@
       "integrationTest": true,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P28-DEL-010": {
@@ -7294,7 +7294,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-001": {
@@ -7333,7 +7333,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-002": {
@@ -7372,7 +7372,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-003": {
@@ -7411,7 +7411,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-004": {
@@ -7450,7 +7450,7 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-005": {
@@ -7489,11 +7489,11 @@
       "integrationTest": false,
       "edgeCases": false,
       "documentation": true,
-      "committed": false
+      "committed": true
     }
   },
   "R-P30-GATE-006": {
-    "status": "TESTING",
+    "status": "PASSED",
     "priority": "MUST",
     "code": [
       "docs/MASTER_REQUIREMENT_CHECKLIST.md",
@@ -7516,7 +7516,7 @@
       "scripts/database/verify.mjs",
       "scripts/dev/smoke-preview.mjs"
     ],
-    "notes": "All BLOCKED/FAILED/NOT TESTED requirements are explicitly disclosed; no production-readiness claim made. (awaiting commit of this milestone; PASSED only after all 11 steps are true)",
+    "notes": "All BLOCKED/FAILED/NOT TESTED requirements are explicitly disclosed; no production-readiness claim made.",
     "verification": {
       "understood": true,
       "plan": true,
